@@ -23,15 +23,17 @@ public class Player : MonoBehaviour
                     coordinates.y = coordinates.y +1;
                 break;
             case "left" :
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
                 if (coordinates.x - 1 >= 0)
                     coordinates.x = coordinates.x -1;
                 break;
             case "right" :
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 if (coordinates.x + 1 < currentRoom.widthRoom)
                     coordinates.x = coordinates.x +1;
                 break;
         }
-        print("player in " + coordinates.x + "," + coordinates.y);
+
     }
 
     public void Start(){

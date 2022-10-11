@@ -8,6 +8,4 @@ public class Room : MonoBehaviour
 {
     public int widthRoom = 11;
     public int heightRoom = 11;
-
-    public List<Enemies> enemies = new List<Enemies>();
 }
