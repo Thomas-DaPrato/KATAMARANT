@@ -786,6 +786,7 @@ GameObject:
   - component: {fileID: 415750275}
   - component: {fileID: 415750274}
   - component: {fileID: 415750273}
+  - component: {fileID: 415750276}
   m_Layer: 5
   m_Name: ButtonSecretTechnic
   m_TagString: Untagged
@@ -858,7 +859,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 415750274}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 415750276}
+        m_TargetAssemblyTypeName: ButtonSecretTechnic, Assembly-CSharp
+        m_MethodName: displaySecretTechnixc
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &415750274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +910,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415750271}
   m_CullTransparentMesh: 1
+--- !u!114 &415750276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415750271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9374e638f2752fdfe816f341a024978a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427915984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,7 +1192,7 @@ GameObject:
   - component: {fileID: 455404134}
   m_Layer: 5
   m_Name: ListOffensiveAttack
-  m_TagString: Untagged
+  m_TagString: ListAction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1365,6 +1390,7 @@ GameObject:
   - component: {fileID: 1053863638}
   - component: {fileID: 1053863640}
   - component: {fileID: 1053863639}
+  - component: {fileID: 1053863641}
   m_Layer: 5
   m_Name: ContentSceneCombat
   m_TagString: Untagged
@@ -1433,6 +1459,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053863637}
   m_CullTransparentMesh: 1
+--- !u!114 &1053863641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053863637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84d95f912805782329d23d2cecfd4c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1119868285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1551,7 @@ GameObject:
   - component: {fileID: 1233078156}
   - component: {fileID: 1233078155}
   - component: {fileID: 1233078154}
+  - component: {fileID: 1233078157}
   m_Layer: 5
   m_Name: ButtonOffensiveActions
   m_TagString: Untagged
@@ -1585,7 +1624,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1233078155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1233078157}
+        m_TargetAssemblyTypeName: ButtonOffensiveActions, Assembly-CSharp
+        m_MethodName: displayAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1233078155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1624,6 +1675,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1233078152}
   m_CullTransparentMesh: 1
+--- !u!114 &1233078157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233078152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8128f675ac1008126883c528b9cc4042, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269331287
 GameObject:
   m_ObjectHideFlags: 0
