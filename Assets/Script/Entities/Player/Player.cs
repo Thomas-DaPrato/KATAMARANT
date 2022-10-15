@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
 {
     public static Vector3 coordinates = new Vector3();
 
-    public Room currentRoom;
+    public RoomManager currentRoom;
 
     public Camera camera;
 
@@ -34,11 +34,17 @@ public class Player : MonoBehaviour
                 break;
         }
 
+
+        gameObject.transform.position = coordinates;
+        camera.transform.position = new Vector3(coordinates.x,coordinates.y,-10);
+
     }
 
-    public void Start(){
-        currentRoom = GameObject.Find("Sol").GetComponent<Room>();
+    public void initPlayer(RoomManager currentRoom){
+        this.currentRoom = currentRoom;
         coordinates = new Vector3(currentRoom.widthRoom/2,0);
+        gameObject.transform.position = coordinates;
+
     }
 
     public void Update(){
@@ -59,8 +65,6 @@ public class Player : MonoBehaviour
             movePlayer("left");
         }
 
-        gameObject.transform.position = coordinates;
-        camera.transform.position = new Vector3(coordinates.x,coordinates.y,-10);
 
     }
 }

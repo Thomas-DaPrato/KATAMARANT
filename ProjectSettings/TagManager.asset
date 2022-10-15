@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ListAction
+  - ToFight
   layers:
   - Default
   - TransparentFX
