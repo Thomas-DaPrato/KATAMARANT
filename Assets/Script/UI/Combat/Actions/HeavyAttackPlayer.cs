@@ -9,7 +9,7 @@ public class HeavyAttackPlayer : Actions
     public override void DoAction()
     {
         print("action joueur");
-        CombatManager.hpEnemy.value = CombatManager.hpEnemy.value - 5;
+        FightManager.hpEnemy.value = FightManager.hpEnemy.value - 5;
     }
 
     public override int GetPriority()

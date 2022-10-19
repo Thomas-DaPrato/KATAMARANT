@@ -5,6 +5,6 @@ using UnityEngine;
 public class ButtonHeavyAttack : MonoBehaviour
 {
     public void HeavyAttack(){
-        CombatManager.actionsTurn.Add(new HeavyAttackPlayer());
+        FightManager.actionsTurn.Add(new HeavyAttackPlayer());
     }
 }

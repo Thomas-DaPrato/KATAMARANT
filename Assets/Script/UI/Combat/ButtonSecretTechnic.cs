@@ -5,8 +5,8 @@ using UnityEngine;
 public class ButtonSecretTechnic : MonoBehaviour
 {
    public void displaySecretTechnixc(){
-        CombatManager.listOffensiveAttack.SetActive(false);
-        CombatManager.listSecretTechnic.SetActive(true);
-        CombatManager.inventory.SetActive(false);
+        FightManager.listOffensiveAttack.SetActive(false);
+        FightManager.listSecretTechnic.SetActive(true);
+        FightManager.inventory.SetActive(false);
    }
 }

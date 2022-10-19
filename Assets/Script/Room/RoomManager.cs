@@ -25,6 +25,7 @@ public class RoomManager : MonoBehaviour
             for(int i = 0; i < gameObject.transform.childCount; i +=1 ){
                 componentsInRoom.Add(gameObject.transform.GetChild(i).gameObject);
             }
+            isInitiate = true;
         }
     }
 

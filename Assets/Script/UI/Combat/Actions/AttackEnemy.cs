@@ -9,7 +9,7 @@ public class AttackEnemy : Actions
     public override void DoAction()
     {
         print("action ennemi");
-        CombatManager.hpPlayer.value = CombatManager.hpPlayer.value - 3;
+        FightManager.hpPlayer.value = FightManager.hpPlayer.value - 3;
     }
 
     public override int GetPriority()

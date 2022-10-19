@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 20
+  animatorController: {fileID: 9100000, guid: f2fc19ac158bb3836ac2af13fa7c0dae, type: 2}

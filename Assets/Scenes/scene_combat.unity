@@ -1127,8 +1127,9 @@ GameObject:
   - component: {fileID: 427915988}
   - component: {fileID: 427915987}
   - component: {fileID: 427915986}
+  - component: {fileID: 427915989}
   m_Layer: 5
-  m_Name: AttaqueLegere
+  m_Name: LightAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1198,7 +1199,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 427915987}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 427915989}
+        m_TargetAssemblyTypeName: ButtonLightAttack, Assembly-CSharp
+        m_MethodName: LightAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1053863641}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: DoAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &427915987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1237,6 +1262,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427915984}
   m_CullTransparentMesh: 1
+--- !u!114 &427915989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427915984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355a096aa76d3b132a4a67fc7b0d6423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &435288162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,6 +2290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d95f912805782329d23d2cecfd4c0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whosIsDead: 
 --- !u!1 &1115740359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,6 +3551,7 @@ GameObject:
   - component: {fileID: 2050706472}
   - component: {fileID: 2050706474}
   - component: {fileID: 2050706473}
+  - component: {fileID: 2050706475}
   m_Layer: 5
   m_Name: EnemyDisplay
   m_TagString: Untagged
@@ -3579,3 +3618,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050706471}
   m_CullTransparentMesh: 1
+--- !u!95 &2050706475
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050706471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -8,4 +8,5 @@ public abstract class Actions : MonoBehaviour
     public abstract void DoAction();
 
     public abstract string GetEntitie();
+
 }

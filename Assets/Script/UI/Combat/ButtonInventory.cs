@@ -5,8 +5,8 @@ using UnityEngine;
 public class ButtonInventory : MonoBehaviour
 {
     public void displayInventory(){
-        CombatManager.listOffensiveAttack.SetActive(false);
-        CombatManager.listSecretTechnic.SetActive(false);
-        CombatManager.inventory.SetActive(true);
+        FightManager.listOffensiveAttack.SetActive(false);
+        FightManager.listSecretTechnic.SetActive(false);
+        FightManager.inventory.SetActive(true);
     }
 }
