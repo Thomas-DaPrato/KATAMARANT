@@ -6,6 +6,5 @@ public class ButtonHeavyAttack : MonoBehaviour
 {
     public void HeavyAttack(){
         CombatManager.actionsTurn.Add(new HeavyAttackPlayer());
-        CombatManager.DoAction();
     }
 }

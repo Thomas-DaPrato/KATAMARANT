@@ -8,11 +8,17 @@ public class HeavyAttackPlayer : Actions
     public static int priority = 10;
     public override void DoAction()
     {
+        print("action joueur");
         CombatManager.hpEnemy.value = CombatManager.hpEnemy.value - 5;
     }
 
     public override int GetPriority()
     {
         return priority;
+    }
+
+    public override string GetEntitie()
+    {
+        return "Player";
     }
 }

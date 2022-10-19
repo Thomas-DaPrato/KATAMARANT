@@ -14,4 +14,9 @@ public class LightAttackPlayer : Actions
     {
         return priority;
     }
+
+    public override string GetEntitie()
+    {
+        return "Player";
+    }
 }

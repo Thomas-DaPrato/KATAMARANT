@@ -16,6 +16,8 @@ public class CombatManager : MonoBehaviour
     public static Slider hpEnemy;
 
     public static List<Actions> actionsTurn = new List<Actions>();
+
+    public static Animator animator;
     
 
     public void Awake(){
@@ -24,6 +26,7 @@ public class CombatManager : MonoBehaviour
         inventory = GameObject.Find("Inventory");
         hpPlayer = GameObject.Find("HP_Player").GetComponent<Slider>();
         hpEnemy = GameObject.Find("HP_Enemy").GetComponent<Slider>();
+        animator = GameObject.Find("PlayerDisplay").GetComponent<Animator>();
     }
 
     public void Start(){
@@ -51,11 +54,19 @@ public class CombatManager : MonoBehaviour
         }
     }
 
-    public static void DoAction(){
+    public void DoAction(){
         AdjustPriority();
-        print(actionsTurn.Count);
-        foreach(Actions action in actionsTurn)
+        StartCoroutine(launchAnimation()); 
+    }
+
+    public IEnumerator launchAnimation(){
+        foreach(Actions action in actionsTurn){
+            if(action.GetEntitie() == "Player")
+                animator.SetBool("isAttacking",true);
+            yield return new WaitForSeconds(1);
             action.DoAction();
+            animator.SetBool("isAttacking",false);
+        }
         actionsTurn = new List<Actions>();
     }
 

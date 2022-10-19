@@ -8,12 +8,17 @@ public class AttackEnemy : Actions
 
     public override void DoAction()
     {
+        print("action ennemi");
         CombatManager.hpPlayer.value = CombatManager.hpPlayer.value - 3;
-        GameObject.Find("PlayerDisplay").GetComponent<Animator>().SetBool("isAttacking",true);
     }
 
     public override int GetPriority()
     {
         return priority;
+    }
+
+    public override string GetEntitie()
+    {
+        return "Enemy";
     }
 }
