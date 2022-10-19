@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Enemies : MonoBehaviour
 {
+    public int hp;
 
     void OnTriggerEnter2D(Collider2D col){
         print(col.name);

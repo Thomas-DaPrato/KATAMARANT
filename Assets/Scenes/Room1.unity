@@ -255,12 +255,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1530442024}
+  - {fileID: 1445000835}
   - {fileID: 980259554}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1530442023
+--- !u!1001 &1445000834
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -315,13 +315,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: TankEnemy
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -4423305271550274949, guid: 1098cee69b59c5763a06ee2ba4804b3f, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1098cee69b59c5763a06ee2ba4804b3f, type: 3}
---- !u!4 &1530442024 stripped
+--- !u!4 &1445000835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6332974893690455649, guid: 1098cee69b59c5763a06ee2ba4804b3f, type: 3}
-  m_PrefabInstance: {fileID: 1530442023}
+  m_PrefabInstance: {fileID: 1445000834}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6810309631973594743
 PrefabInstance:

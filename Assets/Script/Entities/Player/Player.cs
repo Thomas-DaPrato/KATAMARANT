@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
 
     public RoomManager currentRoom;
 
+    public int hp = 10;
+    public int maxHp = 10;
+
     public Camera camera;
 
 
