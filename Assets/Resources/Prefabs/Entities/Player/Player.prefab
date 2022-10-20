@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRoom: {fileID: 0}
+  hp: 10
+  maxHp: 10
   camera: {fileID: 7221557890730300281}
 --- !u!50 &3088748880188050689
 Rigidbody2D:
@@ -232,4 +234,4 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7221557890730300282}
-  m_Enabled: 1
+  m_Enabled: 0

@@ -12,21 +12,50 @@ public class RoomManager : MonoBehaviour
     public static bool isInitiate = false;
 
     public static List<GameObject> componentsInRoom = new List<GameObject>();
+    public static GameObject player;
 
-    public void Start(){
-        if(!isInitiate){
-            DontDestroyOnLoad(gameObject);
-            GameObject player = Resources.Load("Prefabs/Entities/Player/Player") as GameObject;
-            player = Instantiate(player);
-            player.name = "Player";
-            player.transform.SetParent(gameObject.transform);
-            player.GetComponent<Player>().initPlayer(this);
-
-            for(int i = 0; i < gameObject.transform.childCount; i +=1 ){
-                componentsInRoom.Add(gameObject.transform.GetChild(i).gameObject);
+    public void Awake(){
+        RoomManager[] allRoomManager = GameObject.FindObjectsOfType<RoomManager>();
+        print("go size " + allRoomManager.Length);
+        foreach(RoomManager roomManager in allRoomManager){
+            if(isInitiate && !roomManager.name.Contains("Original")){
+                print(roomManager.name +  " : destroy");
+                Destroy(roomManager.gameObject);
             }
-            isInitiate = true;
+                
         }
+        InitRoom();
+    }
+
+    public void InitRoom(){
+            print("start");
+            if(!isInitiate){
+                print("init");
+                gameObject.name = gameObject.name + "Original";
+                DontDestroyOnLoad(gameObject);
+
+                player = GameObject.Find("Player");
+                player.GetComponent<Player>().initPlayer(this);
+                DontDestroyOnLoad(player);
+
+                for(int i = 0; i < gameObject.transform.childCount; i +=1 ){
+                    if(gameObject.transform.GetChild(i).gameObject.name != "Player")
+                        componentsInRoom.Add(gameObject.transform.GetChild(i).gameObject);
+                }
+                isInitiate = true; 
+            }
+            else{
+                print("enable");   
+                EnableComponentsInRoom();
+                Destroy(GameObject.FindGameObjectWithTag("ToFight"));
+                foreach(GameObject go in componentsInRoom)
+                    if(go.tag == "ToFight"){
+                        componentsInRoom.Remove(go);
+                        break;
+                    }
+                        
+                player.SetActive(true);
+            } 
     }
 
     public static void EnableComponentsInRoom(){

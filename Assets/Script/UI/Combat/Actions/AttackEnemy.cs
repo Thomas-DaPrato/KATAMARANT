@@ -8,7 +8,6 @@ public class AttackEnemy : Actions
 
     public override void DoAction()
     {
-        print("action ennemi");
         FightManager.hpPlayer.value = FightManager.hpPlayer.value - 3;
     }
 

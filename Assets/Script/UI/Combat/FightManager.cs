@@ -15,7 +15,7 @@ public class FightManager : MonoBehaviour
     public static Slider hpPlayer;
     public static Slider hpEnemy;
 
-    public static List<Actions> actionsTurn = new List<Actions>();
+    public static List<Actions> actionsTurn;
 
     public static Animator playerAnimator;
     public static Animator enemyAnimator;
@@ -38,6 +38,7 @@ public class FightManager : MonoBehaviour
     }
 
     public void DoAction(){
+        print("size action " + actionsTurn.Count);
         AdjustPriority();
         StartCoroutine(launchAnimation()); 
     }
@@ -90,9 +91,11 @@ public class FightManager : MonoBehaviour
         hpEnemy.maxValue = GameObject.FindWithTag("ToFight").GetComponent<Enemies>().hp;
         hpEnemy.value = hpEnemy.maxValue;
 
+        actionsTurn = new List<Actions>();
         actionsTurn.Add(new AttackEnemy());
 
         RoomManager.DisableComponentsInRoom();
+        RoomManager.player.SetActive(false);
     }
 
     public bool CheckIfEndOfFight(){
@@ -118,8 +121,7 @@ public class FightManager : MonoBehaviour
             //TO DO
         }
         else{
-            Destroy(GameObject.FindGameObjectWithTag("ToFight"));
-            RoomManager.EnableComponentsInRoom();
+            print("fin de combat");
             SceneManager.LoadScene("Room1");
         }
     }
