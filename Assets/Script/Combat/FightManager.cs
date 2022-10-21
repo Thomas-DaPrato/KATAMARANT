@@ -26,8 +26,6 @@ public class FightManager : MonoBehaviour
     public static int buffStatTimer = 0;
 
     public string whosIsDead;
-
-    public static string inWichRoom = "";
     
 
     public void Awake(){
@@ -106,7 +104,7 @@ public class FightManager : MonoBehaviour
         actionsTurn.Add(new AttackEnemy());
 
         RoomManager.DisableComponentsInRoom();
-        RoomManager.player.SetActive(false);
+        DonjonManager.player.SetActive(false);
     }
 
     public bool CheckIfEndOfFight(){
@@ -139,7 +137,16 @@ public class FightManager : MonoBehaviour
         }
         else{
             print("fin de combat");
-            SceneManager.LoadScene(inWichRoom);
+            RoomManager.EnableComponentsInRoom();
+            Destroy(GameObject.FindGameObjectWithTag("ToFight"));
+            foreach(GameObject go in RoomManager.componentsInRoom)
+                if(go.tag == "ToFight"){
+                    RoomManager.componentsInRoom.Remove(go);
+                    break;
+                }
+                
+            DonjonManager.player.SetActive(true);
+            SceneManager.LoadScene("Room");
         }
     }
 

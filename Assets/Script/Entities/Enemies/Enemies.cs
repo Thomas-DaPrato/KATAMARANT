@@ -13,8 +13,7 @@ public class Enemies : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         if(col.name == "Player")
             print("combat");
-            gameObject.tag = "ToFight";
-            FightManager.inWichRoom = SceneManager.GetActiveScene().name;
+            gameObject.tag = "ToFight"; 
             SceneManager.LoadScene("scene_combat");
     }
 }
