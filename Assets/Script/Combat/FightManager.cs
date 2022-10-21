@@ -20,7 +20,14 @@ public class FightManager : MonoBehaviour
     public static Animator playerAnimator;
     public static Animator enemyAnimator;
 
+    public static bool canClickOnButton = true;
+    public static int timeStunt = 0;
+    public static int buffStat = 0;
+    public static int buffStatTimer = 0;
+
     public string whosIsDead;
+
+    public static string inWichRoom = "";
     
 
     public void Awake(){
@@ -38,9 +45,13 @@ public class FightManager : MonoBehaviour
     }
 
     public void DoAction(){
-        print("size action " + actionsTurn.Count);
-        AdjustPriority();
-        StartCoroutine(launchAnimation()); 
+        if(canClickOnButton){
+            canClickOnButton = false;
+            if(timeStunt == 0)
+                AdjustPriority();
+            StartCoroutine(launchAnimation()); 
+        }
+        
     }
 
     public IEnumerator launchAnimation(){
@@ -115,14 +126,20 @@ public class FightManager : MonoBehaviour
     public void EndOfTurn(){
         if(whosIsDead == ""){
             actionsTurn = new List<Actions>();
-            actionsTurn.Add(new AttackEnemy());
+            if(timeStunt > 0)
+                timeStunt -= 1;
+            if(timeStunt == 0) 
+                actionsTurn.Add(new AttackEnemy());
+            if(buffStatTimer > 0)
+                buffStatTimer -= 1;
+            canClickOnButton = true;
         }
         else if(whosIsDead == "Player"){
             //TO DO
         }
         else{
             print("fin de combat");
-            SceneManager.LoadScene("Room1");
+            SceneManager.LoadScene(inWichRoom);
         }
     }
 

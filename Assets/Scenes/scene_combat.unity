@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 98818356}
   - component: {fileID: 98818355}
   - component: {fileID: 98818354}
+  - component: {fileID: 98818357}
   m_Layer: 5
   m_Name: Stun
   m_TagString: Untagged
@@ -206,7 +207,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 98818355}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 98818357}
+        m_TargetAssemblyTypeName: ButtonStunt, Assembly-CSharp
+        m_MethodName: Stunt
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1053863641}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: DoAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &98818355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +270,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98818352}
   m_CullTransparentMesh: 1
+--- !u!114 &98818357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98818352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c16740ec557869ccaa9dd36aaaa69a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &112778450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3217,6 +3254,7 @@ GameObject:
   - component: {fileID: 1761614503}
   - component: {fileID: 1761614502}
   - component: {fileID: 1761614501}
+  - component: {fileID: 1761614504}
   m_Layer: 5
   m_Name: BuffStat
   m_TagString: Untagged
@@ -3288,7 +3326,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1761614502}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1761614504}
+        m_TargetAssemblyTypeName: ButtonBuffStat, Assembly-CSharp
+        m_MethodName: BuffStat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1053863641}
+        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
+        m_MethodName: DoAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1761614502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,6 +3389,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761614499}
   m_CullTransparentMesh: 1
+--- !u!114 &1761614504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761614499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aacc1136aa2523eaa3ebe31ca43e66c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1827891589
 GameObject:
   m_ObjectHideFlags: 0

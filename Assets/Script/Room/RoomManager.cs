@@ -16,10 +16,8 @@ public class RoomManager : MonoBehaviour
 
     public void Awake(){
         RoomManager[] allRoomManager = GameObject.FindObjectsOfType<RoomManager>();
-        print("go size " + allRoomManager.Length);
         foreach(RoomManager roomManager in allRoomManager){
             if(isInitiate && !roomManager.name.Contains("Original")){
-                print(roomManager.name +  " : destroy");
                 Destroy(roomManager.gameObject);
             }
                 
@@ -28,14 +26,13 @@ public class RoomManager : MonoBehaviour
     }
 
     public void InitRoom(){
-            print("start");
             if(!isInitiate){
-                print("init");
                 gameObject.name = gameObject.name + "Original";
                 DontDestroyOnLoad(gameObject);
 
-                player = GameObject.Find("Player");
-                player.GetComponent<Player>().initPlayer(this);
+                player = Instantiate(Resources.Load("Prefabs/Entities/Player/Player") as GameObject);
+                player.name = "Player";
+                player.GetComponent<Player>().initPlayer(this,widthRoom/2,0);
                 DontDestroyOnLoad(player);
 
                 for(int i = 0; i < gameObject.transform.childCount; i +=1 ){
@@ -45,7 +42,6 @@ public class RoomManager : MonoBehaviour
                 isInitiate = true; 
             }
             else{
-                print("enable");   
                 EnableComponentsInRoom();
                 Destroy(GameObject.FindGameObjectWithTag("ToFight"));
                 foreach(GameObject go in componentsInRoom)

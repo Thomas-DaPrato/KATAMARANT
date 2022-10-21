@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public int hp = 10;
     public int maxHp = 10;
 
+
     public Camera camera;
 
 
@@ -43,9 +44,9 @@ public class Player : MonoBehaviour
 
     }
 
-    public void initPlayer(RoomManager currentRoom){
+    public void initPlayer(RoomManager currentRoom, int x, int y){
         this.currentRoom = currentRoom;
-        coordinates = new Vector3(currentRoom.widthRoom/2,0);
+        coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
 
     }

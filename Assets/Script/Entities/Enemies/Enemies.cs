@@ -11,10 +11,10 @@ public class Enemies : MonoBehaviour
     public AnimatorController animatorController;
 
     void OnTriggerEnter2D(Collider2D col){
-        print(col.name);
         if(col.name == "Player")
             print("combat");
             gameObject.tag = "ToFight";
+            FightManager.inWichRoom = SceneManager.GetActiveScene().name;
             SceneManager.LoadScene("scene_combat");
     }
 }

@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackEnemy : Actions
+public class BuffStat : Actions
 {
-    public int priority = 5;
-
     public override void DoAction()
     {
-        FightManager.hpPlayer.value = FightManager.hpPlayer.value - 3;
+        FightManager.buffStat = 5;
+        FightManager.buffStatTimer = 2; 
     }
 
     public override int GetPriority()
     {
-        return priority;
+        return 10;
     }
 
     public override string GetEntitie()
     {
-        return "Enemy";
+        return "Player";
     }
 }

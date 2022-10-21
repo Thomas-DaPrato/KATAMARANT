@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightAttackPlayer : Actions
+public class AttackEnemy : Actions
 {
-    public int priority = 2;
+
     public override void DoAction()
     {
-        FightManager.hpEnemy.value = FightManager.hpEnemy.value - 2; 
+        FightManager.hpPlayer.value = FightManager.hpPlayer.value - 3;
     }
 
     public override int GetPriority()
     {
-        return priority;
+        return 5;
     }
 
     public override string GetEntitie()
     {
-        return "Player";
+        return "Enemy";
     }
 }
