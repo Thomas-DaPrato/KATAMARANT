@@ -50,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widthRoom: 11
   heightRoom: 7
+  enemies: 1
 --- !u!1 &8901340475599604999
 GameObject:
   m_ObjectHideFlags: 0

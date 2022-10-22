@@ -10,7 +10,9 @@ public class FightManager : MonoBehaviour
 {
     public static GameObject listOffensiveAttack;
     public static GameObject listSecretTechnic;
-    public static GameObject inventory;
+    public static GameObject listInventory;
+    public static GameObject inventoryBag;
+    public static GameObject inventorySpecialObject;
 
     public static Slider hpPlayer;
     public static Slider hpEnemy;
@@ -26,13 +28,14 @@ public class FightManager : MonoBehaviour
     public static int buffStatTimer = 0;
 
     public string whosIsDead;
+
+    public static string typeOfEnemy;
     
 
     public void Awake(){
         InitFightManager();
     }
 
-    
 
     public static void AdjustPriority(){
         if(actionsTurn[0].GetPriority() > actionsTurn[1].GetPriority()){
@@ -75,11 +78,18 @@ public class FightManager : MonoBehaviour
     public void InitFightManager(){
         listOffensiveAttack = GameObject.Find("ListOffensiveAttack");
         listSecretTechnic = GameObject.Find("ListSecretTechnic");
-        inventory = GameObject.Find("Inventory");
+        listInventory = GameObject.Find("ListInventory");
+        inventoryBag = GameObject.Find("InventoryBag");
+        inventorySpecialObject = GameObject.Find("InventorySpecialObjet");
+
+        InitInventoryBag();
+        InitInventorySpecialObject();
 
         listOffensiveAttack.SetActive(false);
         listSecretTechnic.SetActive(false);
-        inventory.SetActive(false);
+        listInventory.SetActive(false);
+        inventoryBag.SetActive(false);
+        inventorySpecialObject.SetActive(false);
 
         whosIsDead = "";
 
@@ -137,6 +147,7 @@ public class FightManager : MonoBehaviour
         }
         else{
             print("fin de combat");
+            canClickOnButton = true;
             RoomManager.EnableComponentsInRoom();
             Destroy(GameObject.FindGameObjectWithTag("ToFight"));
             foreach(GameObject go in RoomManager.componentsInRoom)
@@ -144,11 +155,34 @@ public class FightManager : MonoBehaviour
                     RoomManager.componentsInRoom.Remove(go);
                     break;
                 }
-                
+            if(GameObject.FindGameObjectWithTag("Enemy") == null)
+                DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().enemies = false;    
             DonjonManager.player.SetActive(true);
             SceneManager.LoadScene("Room");
         }
+
+
+        
     }
 
+    public void InitInventoryBag(){
+        print("Init Inventory Bag");
+    }
 
+    public void InitInventorySpecialObject(){
+        print(Player.inventorySpecialObject[0]);
+        for(int i = 0; i < Player.inventorySpecialObject.Count; i += 1){
+            if(Player.inventorySpecialObject[i] == "lever"){
+                GameObject lever = Instantiate(Resources.Load("Prefabs/Props/LeverInInventory") as GameObject);
+                lever.name = "LeverInInventory";
+                lever.transform.position = new Vector2(150 * i,-75);
+                lever.transform.SetParent(inventorySpecialObject.transform);
+                print(lever.transform.position);
+            }
+        }
+    }
+
+    public static void changeEnemySprite(string path){
+        GameObject.Find("EnemyDisplay").GetComponent<Image>().sprite = Resources.Load(path) as Sprite;
+    } 
 }

@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widthRoom: 15
   heightRoom: 11
+  enemies: 1
 --- !u!1001 &7299325176598785402
 PrefabInstance:
   m_ObjectHideFlags: 0

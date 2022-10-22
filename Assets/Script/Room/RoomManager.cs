@@ -10,6 +10,7 @@ public class RoomManager : MonoBehaviour
     public int heightRoom = 11;
 
     public static bool isInitiate = false;
+    public bool enemies = false;
 
     public static List<GameObject> componentsInRoom = new List<GameObject>();
     

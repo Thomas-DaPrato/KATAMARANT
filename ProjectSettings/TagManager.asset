@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ListAction
   - ToFight
+  - Enemy
   layers:
   - Default
   - TransparentFX

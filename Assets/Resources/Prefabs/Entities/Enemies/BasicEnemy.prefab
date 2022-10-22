@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6774970536008321770}
   m_Layer: 0
   m_Name: BasicEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
+  typeOfEnemy: basic
   animatorController: {fileID: 9100000, guid: 29dfd0459a8ae094e9ff6cf0aa749de5, type: 2}
 --- !u!61 &6774970536008321770
 BoxCollider2D:

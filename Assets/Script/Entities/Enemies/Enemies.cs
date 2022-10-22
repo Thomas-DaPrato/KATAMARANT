@@ -8,12 +8,15 @@ public class Enemies : MonoBehaviour
 {
     public int hp;
 
+    public string typeOfEnemy;
+
     public AnimatorController animatorController;
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.name == "Player")
             print("combat");
             gameObject.tag = "ToFight"; 
-            SceneManager.LoadScene("scene_combat");
+            FightManager.typeOfEnemy = typeOfEnemy;
+            SceneManager.LoadScene("FightScene");
     }
 }

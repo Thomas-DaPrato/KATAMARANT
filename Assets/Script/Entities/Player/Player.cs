@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public int hp = 10;
     public int maxHp = 10;
 
+    public static List<GameObject> inventoryBag = new List<GameObject>(3);
+    public static List<string> inventorySpecialObject = new List<string>(3); 
+
 
     public Camera camera;
 

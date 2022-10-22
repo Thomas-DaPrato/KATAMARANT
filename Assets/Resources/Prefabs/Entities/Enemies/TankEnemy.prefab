@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6962691258148821656}
   m_Layer: 0
   m_Name: TankEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,4 +125,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 20
+  typeOfEnemy: tank
   animatorController: {fileID: 9100000, guid: f2fc19ac158bb3836ac2af13fa7c0dae, type: 2}
