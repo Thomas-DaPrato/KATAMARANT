@@ -10,7 +10,12 @@ public class Door : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D col){
         if(col.name == "Player"){
-            SceneManager.LoadScene(roomBehind);
+            DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
+            DonjonManager.currentRoom = roomBehind;
+            DonjonManager.rooms[DonjonManager.currentRoom].SetActive(true);
+            Player.coordinates = coordinatesBehind;
+            Player.currentRoom = DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>();
+            DonjonManager.player.transform.position = Player.coordinates;
         }
     }
 }

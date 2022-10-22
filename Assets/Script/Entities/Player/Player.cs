@@ -5,9 +5,9 @@ using System;
 
 public class Player : MonoBehaviour
 {
-    public static Vector3 coordinates = new Vector3();
+    public static Vector2 coordinates = new Vector2();
 
-    public RoomManager currentRoom;
+    public static RoomManager currentRoom;
 
     public int hp = 10;
     public int maxHp = 10;
@@ -44,8 +44,8 @@ public class Player : MonoBehaviour
 
     }
 
-    public void initPlayer(RoomManager currentRoom, int x, int y){
-        this.currentRoom = currentRoom;
+    public void initPlayer(RoomManager myCurrentRoom, int x, int y){
+        currentRoom = myCurrentRoom;
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
 

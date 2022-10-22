@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/scene_combat.unity
     guid: 1ef4f8799e3032b1eb3abc7969541646
-  - enabled: 1
-    path: Assets/Scenes/Room2.unity
-    guid: 8287bc4667297b4dcbcaf463da297abe
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 31209e59a287c176b9a61c5082098924

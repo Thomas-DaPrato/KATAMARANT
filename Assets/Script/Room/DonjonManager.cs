@@ -13,7 +13,9 @@ public class DonjonManager : MonoBehaviour
 
     public void Start(){
 
-        AddRoom("Room1");
+        for(int i = 1; i < 11; i+=1)
+            AddRoom("Room"+i);
+
 
         player = Instantiate(Resources.Load("Prefabs/Entities/Player/Player") as GameObject);
         player.name = "Player";
