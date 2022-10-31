@@ -5,10 +5,15 @@ using UnityEngine;
 
 public class LeverInFight : Actions
 {
+    public Sprite sprite;
+
+    public  LeverInFight(Sprite sp){
+        sprite = sp;
+    }
     public override void DoAction()
     {
         if(FightManager.typeOfEnemy == "lever"){
-            FightManager.changeEnemySprite("Images/Enemies/Lever/levier_entier.png");
+            FightManager.changeEnemySprite(sprite);
         }
         else
             Debug.Log("cela n'a aucun effet");

@@ -5,6 +5,9 @@ using UnityEngine;
 public class ButtonStunt : MonoBehaviour
 {
     public void Stunt(){
-        FightManager.actionsTurn.Add(new StuntPlayer());
+        if(FightManager.canClickOnButton){
+            FightManager.actionsTurn.Add(new StuntPlayer());
+        }
+            
     }
 }

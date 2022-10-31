@@ -113,7 +113,7 @@ public class FightManager : MonoBehaviour
         actionsTurn = new List<Actions>();
         actionsTurn.Add(new AttackEnemy());
 
-        RoomManager.DisableComponentsInRoom();
+        DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
     }
 
@@ -148,11 +148,20 @@ public class FightManager : MonoBehaviour
         else{
             print("fin de combat");
             canClickOnButton = true;
-            RoomManager.EnableComponentsInRoom();
-            Destroy(GameObject.FindGameObjectWithTag("ToFight"));
-            foreach(GameObject go in RoomManager.componentsInRoom)
+            DonjonManager.rooms[DonjonManager.currentRoom].SetActive(true);
+
+            if(typeOfEnemy == "lever"){
+                GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().sprite = GameObject.Find("EnemyDisplay").GetComponent<Image>().sprite;
+                GameObject.Find("LeverToFight").GetComponent<BoxCollider2D>().isTrigger = false;
+                GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+                Destroy(GameObject.FindGameObjectWithTag("ToFight"));
+
+                
+            foreach(GameObject go in DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom)
                 if(go.tag == "ToFight"){
-                    RoomManager.componentsInRoom.Remove(go);
+                    DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
                     break;
                 }
             if(GameObject.FindGameObjectWithTag("Enemy") == null)
@@ -170,19 +179,19 @@ public class FightManager : MonoBehaviour
     }
 
     public void InitInventorySpecialObject(){
-        print(Player.inventorySpecialObject[0]);
         for(int i = 0; i < Player.inventorySpecialObject.Count; i += 1){
             if(Player.inventorySpecialObject[i] == "lever"){
-                GameObject lever = Instantiate(Resources.Load("Prefabs/Props/LeverInInventory") as GameObject);
+                GameObject lever = Instantiate(Resources.Load("Prefabs/Props/LeverInInventory") as GameObject, inventorySpecialObject.transform, true);
                 lever.name = "LeverInInventory";
-                lever.transform.position = new Vector2(150 * i,-75);
-                lever.transform.SetParent(inventorySpecialObject.transform);
-                print(lever.transform.position);
+                lever.transform.position = new Vector2((inventorySpecialObject.transform.position.x - 225) + (150*i +75),inventorySpecialObject.transform.position.y);
+                lever.GetComponent<Button>().onClick.AddListener(DoAction);                
             }
         }
     }
 
-    public static void changeEnemySprite(string path){
-        GameObject.Find("EnemyDisplay").GetComponent<Image>().sprite = Resources.Load(path) as Sprite;
+    public static void changeEnemySprite(Sprite sprite){
+        GameObject.Find("EnemyDisplay").GetComponent<Image>().sprite = sprite;
     } 
+    
+   
 }

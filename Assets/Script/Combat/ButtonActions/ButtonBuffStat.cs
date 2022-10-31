@@ -5,6 +5,9 @@ using UnityEngine;
 public class ButtonBuffStat : MonoBehaviour
 {
     public void BuffStat(){
-        FightManager.actionsTurn.Add(new BuffStat());
+        if(FightManager.canClickOnButton){
+            FightManager.actionsTurn.Add(new BuffStat());
+        }
+            
     }
 }

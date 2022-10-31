@@ -18,6 +18,8 @@ public class Player : MonoBehaviour
 
     public Camera camera;
 
+    public GameObject reaction;
+
 
     public void movePlayer(String direction){
         switch(direction){
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour
         currentRoom = myCurrentRoom;
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
+        reaction.SetActive(false);
 
     }
 

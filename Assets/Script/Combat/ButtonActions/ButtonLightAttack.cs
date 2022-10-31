@@ -5,6 +5,9 @@ using UnityEngine;
 public class ButtonLightAttack : MonoBehaviour
 {
     public void LightAttack(){
-        FightManager.actionsTurn.Add(new LightAttackPlayer());
+        if(FightManager.canClickOnButton){
+            FightManager.actionsTurn.Add(new LightAttackPlayer());
+        }
+            
     }
 }
