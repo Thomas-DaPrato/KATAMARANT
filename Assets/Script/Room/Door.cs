@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour
@@ -18,9 +19,19 @@ public class Door : MonoBehaviour
                 Player.currentRoom = DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>();
                 DonjonManager.player.transform.position = Player.coordinates;
             }
-            else
-                print("porte fermé. battez tous les ennemis de la salle pour la dévérouillée");
+            else{
+                StartCoroutine(DislayMsgDoorBlocked());
+            }
+            
+    
             
         }
+    }
+
+    public IEnumerator DislayMsgDoorBlocked(){
+        GameObject.Find("Player").GetComponent<Player>().reaction.SetActive(true);
+        GameObject.Find("Player").GetComponent<Player>().reaction.GetComponentInChildren<TextMeshProUGUI>().text = "Je dois battre tous les ennemis pour ouvrir la porte";
+        yield return new WaitForSeconds(1);
+        GameObject.Find("Player").GetComponent<Player>().reaction.SetActive(false);
     }
 }

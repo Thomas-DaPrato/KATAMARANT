@@ -9,7 +9,7 @@ public class SpawnPassifMob : MonoBehaviour
     {
         print("spawn");
         GameObject mob = Instantiate(DonjonManager.passivesMobs[Random.Range(0,DonjonManager.passivesMobs.Length)]) as GameObject;
-        mob.name.Replace("(Clone)", "");
+        mob.name = mob.name.Replace("(Clone)", "");
         print(mob.name);
         DontDestroyOnLoad(mob);
         mob.transform.position = gameObject.transform.position;
