@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3899435383337806105}
   - component: {fileID: 1455381362259167009}
   - component: {fileID: 5703602923167448779}
+  - component: {fileID: 2321806945812480419}
   m_Layer: 0
   m_Name: Mob1
   m_TagString: Untagged
@@ -127,3 +128,23 @@ MonoBehaviour:
   reactions:
   - qu'il est mignon
   - trop choupi
+--- !u!95 &2321806945812480419
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8750499472084312346}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65e14761392b7333185fddbee25e9bfc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
