@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using System;
 
 public class Player : MonoBehaviour
@@ -53,7 +54,6 @@ public class Player : MonoBehaviour
         currentRoom = myCurrentRoom;
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
-        reaction.SetActive(false);
 
     }
 
@@ -75,6 +75,6 @@ public class Player : MonoBehaviour
             movePlayer("left");
         }
 
-
     }
+
 }

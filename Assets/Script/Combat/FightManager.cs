@@ -30,6 +30,8 @@ public class FightManager : MonoBehaviour
     public string whosIsDead;
 
     public static string typeOfEnemy;
+
+    public static bool hasMadeFightTuto = false;
     
 
     public void Awake(){

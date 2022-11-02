@@ -12,6 +12,8 @@ public class DonjonManager : MonoBehaviour
 
     public static Object[] passivesMobs ;
 
+    public static bool endOfNarrativeIntro = false;
+
     public void Start(){
         passivesMobs = Resources.LoadAll("Prefabs/Entities/PassivesMobs");
 
@@ -29,7 +31,6 @@ public class DonjonManager : MonoBehaviour
         player.name = "Player";
         player.GetComponent<Player>().initPlayer(rooms[currentRoom].GetComponent<RoomManager>(),rooms[currentRoom].GetComponent<RoomManager>().widthRoom/2,0);
         DontDestroyOnLoad(player);
-
 
     }
 
