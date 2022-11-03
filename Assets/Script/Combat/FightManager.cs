@@ -31,7 +31,7 @@ public class FightManager : MonoBehaviour
 
     public static string typeOfEnemy;
 
-    public static bool hasMadeFightTuto = false;
+    public static bool endOfFightTuto = false;
     
 
     public void Awake(){
@@ -48,7 +48,7 @@ public class FightManager : MonoBehaviour
     }
 
     public void DoAction(){
-        if(canClickOnButton){
+        if(endOfFightTuto && canClickOnButton){
             canClickOnButton = false;
             if(timeStunt == 0)
                 AdjustPriority();

@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonBuffStat : MonoBehaviour
 {
     public void BuffStat(){
-        if(FightManager.canClickOnButton){
+        if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
             FightManager.actionsTurn.Add(new BuffStat());
         }
             

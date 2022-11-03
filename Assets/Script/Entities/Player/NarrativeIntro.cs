@@ -9,7 +9,7 @@ public class NarrativeIntro : MonoBehaviour
     public static int indice = 0;
 
     public void Update(){
-        if(!DonjonManager.endOfNarrativeIntro)
+        if(!DonjonManager.endOfNarrativeIntro){
             gameObject.GetComponentInChildren<TextMeshProUGUI>().text = sentences[indice];
             if(Input.GetKeyDown(KeyCode.Space)){
                 indice += 1;
@@ -19,5 +19,7 @@ public class NarrativeIntro : MonoBehaviour
                 }
                     
             }
+        }
+            
     }
 }

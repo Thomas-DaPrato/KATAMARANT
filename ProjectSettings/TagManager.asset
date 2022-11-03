@@ -8,6 +8,7 @@ TagManager:
   - ToFight
   - Enemy
   - Spawner
+  - DisplayObject
   layers:
   - Default
   - TransparentFX

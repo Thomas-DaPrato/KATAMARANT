@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonStunt : MonoBehaviour
 {
     public void Stunt(){
-        if(FightManager.canClickOnButton){
+        if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
             FightManager.actionsTurn.Add(new StuntPlayer());
         }
             
