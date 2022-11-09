@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - on dirait Pacman qui s'est pris une vitre
-  - le pauvre !
+  - On dirait Pacman qui s'est pris une vitre !
+  - Le pauvre !
 --- !u!61 &1852688540108202369
 BoxCollider2D:
   m_ObjectHideFlags: 0

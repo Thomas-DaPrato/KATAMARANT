@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - une statue qui bouge ??
-  - on ne dirait pas... en fait je ne sais plus
+  - Une statue qui bouge ??
+  - On ne dirait pas... En fait je ne sais plus.
 --- !u!61 &7913301055451343086
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - une plante orange avce des yeux. Je ne suis pas fou !
+  - Une plante orange avec des yeux. Je ne suis pas fou !
   - No ma no ma ma nei !
 --- !u!61 &3277211241002974161
 BoxCollider2D:

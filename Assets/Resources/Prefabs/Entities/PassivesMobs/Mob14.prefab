@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "le d\xE9mon wifi !"
-  - va au diable
+  - "Le d\xE9mon wifi !"
+  - Va au diable !
 --- !u!61 &4550070639500610443
 BoxCollider2D:
   m_ObjectHideFlags: 0

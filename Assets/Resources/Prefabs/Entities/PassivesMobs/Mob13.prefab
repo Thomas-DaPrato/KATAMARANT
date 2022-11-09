@@ -48,10 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - une valise ?
-  - "c'est donc toi le briseur de poign\xE9e ?"
-  - "va foudroy\xE9 ta g\xE9nitrice !"
-  - "rentre chez ton p\xE8re manant"
+  - Une valise ?
+  - "C'est donc toi le briseur de poign\xE9es ?"
+  - "Va foudroyer ta g\xE9nitrice !"
+  - "Rentre chez ton p\xE8re manant !"
 --- !u!61 &5203842449289517519
 BoxCollider2D:
   m_ObjectHideFlags: 0

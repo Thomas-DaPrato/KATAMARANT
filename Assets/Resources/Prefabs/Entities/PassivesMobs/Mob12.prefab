@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "oh ! j'ai la r\xE9f ! The Binding of Isaac"
-  - tu as perdu tes parents ?
+  - "Oh ! J'ai la r\xE9f ! The Binding of Isaac !"
+  - Tu as perdu tes parents ?
 --- !u!61 &4179060965061862963
 BoxCollider2D:
   m_ObjectHideFlags: 0

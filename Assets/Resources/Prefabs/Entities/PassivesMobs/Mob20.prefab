@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - un lapin radiocatif ?
-  - 'des grandes oreilles, une queue en ponpon : c''est bien un lapin'
+  - Un lapin radiocatif ?
+  - 'Des grandes oreilles, une queue en ponpon : c''est bien un lapin !'
 --- !u!61 &5444886440996673842
 BoxCollider2D:
   m_ObjectHideFlags: 0

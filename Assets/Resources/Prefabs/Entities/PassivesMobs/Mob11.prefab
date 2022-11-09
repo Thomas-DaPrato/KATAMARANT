@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - qu'est ce que c'est que ce truc ?
-  - on dirait un petit chien
+  - Qu'est-ce que c'est que ce truc ?
+  - On dirait un petit chien moche.
 --- !u!61 &354479895392107133
 BoxCollider2D:
   m_ObjectHideFlags: 0

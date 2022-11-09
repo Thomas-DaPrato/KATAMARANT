@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - on dirait une myrtille qui vole
-  - depuis quand il y a des chauves souris dans l'espace ?
+  - On dirait une myrtille qui vole !
+  - Depuis quand il y a des chauves-souris dans l'espace ?
 --- !u!61 &8761157853586199266
 BoxCollider2D:
   m_ObjectHideFlags: 0

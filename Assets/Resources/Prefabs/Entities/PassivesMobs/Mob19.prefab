@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - un chat, trop choux !
+  - Un chat, trop chou !
   - '*caresse*'
 --- !u!61 &6034264544190073253
 BoxCollider2D:

@@ -48,8 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - j'adore les chats
-  - cette tete de chat est un peu sataniste
+  - J'adore les chats !
+  - "Cette t\xEAte de chat est un peu satanique !"
+  - "Il a \xE9t\xE9 d\xE9chapit\xE9 !"
 --- !u!61 &2110032622155906875
 BoxCollider2D:
   m_ObjectHideFlags: 0

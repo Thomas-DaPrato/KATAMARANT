@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "enfin un mouchoir, je commencais \xE0 avoir le nez qui coule"
-  - "\xE7a sent la menthe ici"
+  - "Enfin un mouchoir, je commen\xE7ais \xE0 avoir le nez qui coule."
+  - "\xC7a sent la menthe ici !"
 --- !u!61 &1938588035293520531
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - C'est quoi cette grosse mouche ?
-  - Ca vole ou pas ?
+  - "\xC7a vole ou pas ?"
 --- !u!61 &1394704533801949795
 BoxCollider2D:
   m_ObjectHideFlags: 0
