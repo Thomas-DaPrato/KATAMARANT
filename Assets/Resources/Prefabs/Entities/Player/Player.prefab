@@ -304,9 +304,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sentences:
-  - "bon, allons r\xE9cup\xE9rer le Katamarant de Grand-P\xE8re"
-  - ce vaisseau est plein d'ennemis
-  - "je vais devoir tous les affronter pour le r\xE9cup\xE9rer"
+  - "Bon, allons r\xE9cup\xE9rer le Katamarant de grand-p\xE8re"
+  - Ce vaisseau est plein d'ennemis
+  - "Je vais devoir tous les affronter pour le r\xE9cup\xE9rer"
 --- !u!1 &5890245755539446978
 GameObject:
   m_ObjectHideFlags: 0

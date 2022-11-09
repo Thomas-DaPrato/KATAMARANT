@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - une guirlande de Noel ? okay
-  - "elle trop choupi cette f\xE9e"
+  - "Une guirlande de No\xEBl ? Okay !"
+  - "Elle trop choupi cette f\xE9e !"
 --- !u!61 &1382031561615221220
 BoxCollider2D:
   m_ObjectHideFlags: 0

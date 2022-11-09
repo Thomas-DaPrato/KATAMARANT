@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - un petit pois volant
-  - oh !
+  - Un petit pois volant !
+  - Oh !
 --- !u!95 &1597888490994894915
 Animator:
   serializedVersion: 4

@@ -62,13 +62,15 @@ public class FightManager : MonoBehaviour
             if(action.GetEntitie() == "Player")
                 playerAnimator.SetBool("playerAttacking",true);
             else
-                enemyAnimator.SetBool("enemyAttacking",true);
+                if(enemyAnimator != null)
+                    enemyAnimator.SetBool("enemyAttacking",true);
             yield return new WaitForSeconds(1);
             action.DoAction();
             if(action.GetEntitie() == "Player")
                 playerAnimator.SetBool("playerAttacking",false);
             else
-                enemyAnimator.SetBool("enemyAttacking",false);
+                if(enemyAnimator != null)
+                    enemyAnimator.SetBool("enemyAttacking",false);
             yield return new WaitForSeconds(0.5f);
             if(CheckIfEndOfFight())
                 break;

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - GLOIRE A ATONE
+  - "GLOIRE \xC0 ATONE"
 --- !u!95 &5228693651414624230
 Animator:
   serializedVersion: 4

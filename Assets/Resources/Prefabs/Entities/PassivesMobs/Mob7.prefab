@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "oula, c'est peut etre empoison\xE9"
-  - oh les jolis points blanc !
+  - "Oula, c'est peut-\xEAtre empoisonn\xE9"
+  - Oh les jolis points blancs !
 --- !u!61 &1137249619101346556
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -17,7 +17,6 @@ public class DonjonManager : MonoBehaviour
     public void Start(){
         passivesMobs = Resources.LoadAll("Prefabs/Entities/PassivesMobs");
 
-        print("size : " + passivesMobs.Length);
 
         for(int i = 1; i < 11; i+=1)
             AddRoom("Room"+i);

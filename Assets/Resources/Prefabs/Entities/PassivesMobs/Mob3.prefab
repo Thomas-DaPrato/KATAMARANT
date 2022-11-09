@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - euh... Bonjour
-  - un fantome bleu ?!
+  - Euh... Bonjour
+  - "Un fant\xF4me bleu ?!"
 --- !u!61 &1089363757233001439
 BoxCollider2D:
   m_ObjectHideFlags: 0

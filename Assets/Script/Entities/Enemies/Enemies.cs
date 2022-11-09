@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -11,7 +10,7 @@ public class Enemies : MonoBehaviour
 
     public string typeOfEnemy;
 
-    public AnimatorController animatorController;
+    public RuntimeAnimatorController animatorController;
 
     void OnTriggerEnter2D(Collider2D col){
         if(col.name == "Player"){
@@ -24,9 +23,7 @@ public class Enemies : MonoBehaviour
                 else
                     StartCoroutine(DisplayMsgMissingLever());
             }
-            
         }
-            
     }
 
     public void LauchFight(){

@@ -50,6 +50,7 @@ MonoBehaviour:
   reactions:
   - "un... \xE9cureuil ??"
   - il a un petit nez top mimi !!
+  - est ce que c'est un Taupiqueur ?
 --- !u!61 &2923964586157568013
 BoxCollider2D:
   m_ObjectHideFlags: 0

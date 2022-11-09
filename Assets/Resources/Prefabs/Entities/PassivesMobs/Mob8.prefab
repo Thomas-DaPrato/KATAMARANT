@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - une tomate ?!
-  - le joli rouge
+  - Une tomate ?!
+  - Le joli rouge !
 --- !u!61 &3518009746843385243
 BoxCollider2D:
   m_ObjectHideFlags: 0

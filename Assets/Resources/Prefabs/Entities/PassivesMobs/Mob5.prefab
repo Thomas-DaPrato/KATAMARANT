@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - gouzi, gouzi, gouzi
-  - trop choux
+  - Gouzi, gouzi, gouzi !
+  - Trop chou !
 --- !u!61 &4244385526268843262
 BoxCollider2D:
   m_ObjectHideFlags: 0

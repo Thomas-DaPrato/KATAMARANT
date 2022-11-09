@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - quelle belle fleure !
-  - "est ce que \xE7a se mange ?"
+  - Quelle belle fleur !
+  - "Est-ce que \xE7a se mange ?"
 --- !u!61 &2885848613368342172
 BoxCollider2D:
   m_ObjectHideFlags: 0

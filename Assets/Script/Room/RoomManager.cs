@@ -26,6 +26,7 @@ public class RoomManager : MonoBehaviour
             print(gameObject.name);
             for (int i = 0; i < GameObject.Find("Spawn").transform.childCount; i += 1)
                 GameObject.Find("Spawn").transform.GetChild(i).GetComponent<SpawnPassifMob>().Spawn();
+            
         }
             
              
