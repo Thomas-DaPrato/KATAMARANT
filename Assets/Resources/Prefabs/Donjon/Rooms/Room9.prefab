@@ -563,7 +563,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3430869163737929530, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: m_Name
-      value: DoorLeft
+      value: DoorRight
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929531, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: m_RootOrder
@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929531, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.25
+      value: 4.25
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929531, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2972453117213381832, guid: 7148139dd2fa8ff19869cf2c21539296, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2972453117213381832, guid: 7148139dd2fa8ff19869cf2c21539296, type: 3}
       propertyPath: m_LocalPosition.y

@@ -550,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: roomBehind
-      value: Room9
+      value: Room6
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: coordinatesBehind.x
@@ -558,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: coordinatesBehind.y
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
@@ -624,15 +624,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: roomBehind
-      value: Room6
+      value: Room9
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: coordinatesBehind.x
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: coordinatesBehind.y
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}

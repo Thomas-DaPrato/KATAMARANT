@@ -50,6 +50,7 @@ MonoBehaviour:
   reactions:
   - "On dirait une limace crois\xE9 avec un poisson des profondeurs."
   - Bah ! C'est tout visqueux !
+  - C'est une baudroie citron !
 --- !u!61 &3713434103733990552
 BoxCollider2D:
   m_ObjectHideFlags: 0

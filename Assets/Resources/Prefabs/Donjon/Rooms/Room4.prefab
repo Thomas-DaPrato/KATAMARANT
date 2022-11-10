@@ -1172,6 +1172,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
+      propertyPath: roomBehind
+      value: Room3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430869163737929540, guid: a4a7617977fb54adba8e6dc8a516137e, type: 3}
       propertyPath: coordinatesBehind.x
       value: 5
       objectReference: {fileID: 0}

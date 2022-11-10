@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8910594594269541505
+--- !u!1 &6805281126117799401
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8619211186929802295}
-  - component: {fileID: 9202245170012618853}
-  - component: {fileID: 354479895392107133}
-  - component: {fileID: 3893597224305883786}
-  - component: {fileID: 7904796332838878618}
+  - component: {fileID: 5927981044339727711}
+  - component: {fileID: 6515878029442433293}
+  - component: {fileID: 2392150430089313045}
+  - component: {fileID: 1427970633428024290}
+  - component: {fileID: 8991235687253336724}
   m_Layer: 0
-  m_Name: Mob11
+  m_Name: Mob32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8619211186929802295
+--- !u!4 &5927981044339727711
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910594594269541505}
+  m_GameObject: {fileID: 6805281126117799401}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.243865, y: 3.1107018, z: 0.03325011}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,28 +35,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9202245170012618853
+--- !u!114 &6515878029442433293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910594594269541505}
+  m_GameObject: {fileID: 6805281126117799401}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b65762fd83b21505190baee54273a539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Qu'est-ce que c'est que ce truc ?
-  - "Un surimi \xE0 t\xEAte de crabe. On trouve de tout ici !"
---- !u!61 &354479895392107133
+  - "Un lapin d'apr\xE8s ce que l'on m'a dit."
+  - 'Un slime rouge avec des antennes. Un escargot en reconversion ? '
+--- !u!61 &2392150430089313045
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910594594269541505}
+  m_GameObject: {fileID: 6805281126117799401}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -68,7 +68,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -76,13 +76,13 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
---- !u!212 &3893597224305883786
+--- !u!212 &1427970633428024290
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910594594269541505}
+  m_GameObject: {fileID: 6805281126117799401}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -117,28 +117,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 18c7f37bc4a93adc8ac1d787c5359e11, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 643be52e669b98e4a8e00758032e4ccf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7904796332838878618
+--- !u!95 &8991235687253336724
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8910594594269541505}
+  m_GameObject: {fileID: 6805281126117799401}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1e12611eb8fa1760b8cbf97c779ab7dc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3b90f8cfff392cc44a4255f5fb0c3ed9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
