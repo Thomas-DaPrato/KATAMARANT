@@ -6,7 +6,7 @@ public class LightAttackPlayer : Actions
 {
     public override void DoAction()
     {
-        FightManager.hpEnemy.value = FightManager.hpEnemy.value - (2 + FightManager.buffStat); 
+        FightManager1Vs1.hpEnemy.value = FightManager1Vs1.hpEnemy.value - (2 + FightManager1Vs1.buffStat); 
     }
 
     public override int GetPriority()
@@ -17,5 +17,10 @@ public class LightAttackPlayer : Actions
     public override string GetEntitie()
     {
         return "Player";
+    }
+
+    public override string GetAnimation()
+    {
+        return "LightAttack";
     }
 }

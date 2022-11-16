@@ -6,7 +6,8 @@ public abstract class Actions
 {
     public abstract int GetPriority();
     public abstract void DoAction();
-
     public abstract string GetEntitie();
+
+    public abstract string GetAnimation();
 
 }

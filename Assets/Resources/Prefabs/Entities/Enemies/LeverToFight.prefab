@@ -49,6 +49,7 @@ MonoBehaviour:
   hp: 1
   typeOfEnemy: lever
   animatorController: {fileID: 9100000, guid: 0e3c14026f7450d45af6f857ffa81294, type: 2}
+  order: 0
 --- !u!212 &4723532806046789487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f57ed35b755052047b7d9a3eb3de5407, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

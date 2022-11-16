@@ -6,8 +6,8 @@ public class BuffStat : Actions
 {
     public override void DoAction()
     {
-        FightManager.buffStat = 5;
-        FightManager.buffStatTimer = 2; 
+        FightManager1Vs1.buffStat = 5;
+        FightManager1Vs1.buffStatTimer = 2; 
         
     }
 
@@ -19,5 +19,10 @@ public class BuffStat : Actions
     public override string GetEntitie()
     {
         return "Player";
+    }
+
+    public override string GetAnimation()
+    {
+        return "buffAttack";
     }
 }

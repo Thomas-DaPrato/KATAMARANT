@@ -8,7 +8,7 @@ public class HeavyAttackPlayer : Actions
 
     public override void DoAction()
     {
-        FightManager.hpEnemy.value = FightManager.hpEnemy.value - (5 + FightManager.buffStat);
+        FightManager1Vs1.hpEnemy.value = FightManager1Vs1.hpEnemy.value - (5 + FightManager1Vs1.buffStat);
     }
 
     public override int GetPriority()
@@ -19,5 +19,10 @@ public class HeavyAttackPlayer : Actions
     public override string GetEntitie()
     {
         return "Player";
+    }
+
+    public override string GetAnimation()
+    {
+        return "HeavyAttack";
     }
 }

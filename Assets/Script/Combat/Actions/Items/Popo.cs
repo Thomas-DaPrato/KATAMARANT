@@ -18,4 +18,9 @@ public class Popo : Actions
     {
         return "Player";
     }
+
+    public override string GetAnimation()
+    {
+        return "popo";
+    }
 }

@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Room.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/FightScene.unity
+    path: Assets/Scenes/FightScene/FightScene1Vs1.unity
     guid: 1ef4f8799e3032b1eb3abc7969541646
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/FightScene/FightScene1Vs2.unity
+    guid: 007a6fd93de3f8146a116d8dbc5a9507
+  - enabled: 1
+    path: Assets/Scenes/FightScene/FightScene1Vs3.unity
+    guid: 556173d6823c2db4b94ab49c0d7edc0e
   m_configObjects: {}

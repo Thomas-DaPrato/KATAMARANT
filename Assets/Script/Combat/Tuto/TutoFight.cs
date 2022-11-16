@@ -10,7 +10,7 @@ public class TutoFight : MonoBehaviour
     public static int indice = 0;
     void Update()
     {
-        if(!FightManager.endOfFightTuto){
+        if(!FightManager1Vs1.endOfFightTuto){
             if(tutoElements[indice].tag == "DisplayObject")
                 tutoElements[indice].GetComponent<ObjectToDisplay>().displaying.Invoke();
             tutoElements[indice].SetActive(true);
@@ -18,7 +18,7 @@ public class TutoFight : MonoBehaviour
                 tutoElements[indice].SetActive(false);
                 indice += 1;
                 if(indice >= tutoElements.Count){
-                    FightManager.endOfFightTuto = true;
+                    FightManager1Vs1.endOfFightTuto = true;
                 }
                     
             }

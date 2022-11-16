@@ -7,6 +7,6 @@ public class ButtonLeverInFight : MonoBehaviour
 {
     public Sprite sprite;
     public void LeverInFight(){
-        FightManager.actionsTurn.Add(new LeverInFight(sprite));
+        FightManager1Vs1.actionsTurn.Add(new LeverInFight(sprite));
     }
 }

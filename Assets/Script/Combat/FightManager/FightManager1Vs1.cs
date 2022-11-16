@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FightManager : MonoBehaviour
+public class FightManager1Vs1 : MonoBehaviour
 {
     public static GameObject listOffensiveAttack;
     public static GameObject listSecretTechnic;
@@ -14,12 +14,16 @@ public class FightManager : MonoBehaviour
     public static GameObject inventoryBag;
     public static GameObject inventorySpecialObject;
 
+    public GameObject enemyDisplay;
+    public static GameObject enemyToFight;
+
     public static Slider hpPlayer;
     public static Slider hpEnemy;
 
     public static List<Actions> actionsTurn;
 
     public static Animator playerAnimator;
+
     public static Animator enemyAnimator;
 
     public static bool canClickOnButton = true;
@@ -100,8 +104,8 @@ public class FightManager : MonoBehaviour
         hpPlayer = GameObject.Find("HP_Player").GetComponent<Slider>();
         hpEnemy = GameObject.Find("HP_Enemy").GetComponent<Slider>();
 
-        GameObject.Find("EnemyDisplay").GetComponent<Image>().sprite = GameObject.FindWithTag("ToFight").GetComponent<SpriteRenderer>().sprite;
-        GameObject.Find("EnemyDisplay").GetComponent<Animator>().runtimeAnimatorController = GameObject.FindWithTag("ToFight").GetComponent<Enemies>().animatorController;
+        GameObject.Find("EnemyDisplay").GetComponent<Image>().sprite = enemyToFight.GetComponent<SpriteRenderer>().sprite;
+        //GameObject.Find("EnemyDisplay").GetComponent<Animator>().runtimeAnimatorController = enemyToFight.GetComponent<Enemies>().animatorController;
 
 
         playerAnimator = GameObject.Find("PlayerDisplay").GetComponent<Animator>();
@@ -111,7 +115,7 @@ public class FightManager : MonoBehaviour
         hpPlayer.maxValue = GameObject.Find("Player").GetComponent<Player>().maxHp;
         hpPlayer.value = GameObject.Find("Player").GetComponent<Player>().hp;
 
-        hpEnemy.maxValue = GameObject.FindWithTag("ToFight").GetComponent<Enemies>().hp;
+        hpEnemy.maxValue = enemyToFight.GetComponent<Enemies>().hp;
         hpEnemy.value = hpEnemy.maxValue;
 
         actionsTurn = new List<Actions>();

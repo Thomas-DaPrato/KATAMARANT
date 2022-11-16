@@ -5,8 +5,8 @@ using UnityEngine;
 public class ButtonHeavyAttack : MonoBehaviour
 {
     public void HeavyAttack(){
-        if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
-            FightManager.actionsTurn.Add(new HeavyAttackPlayer());
+        if(FightManager1Vs1.endOfFightTuto && FightManager1Vs1.canClickOnButton){
+            FightManager1Vs1.actionsTurn.Add(new HeavyAttackPlayer());
         }
             
     }

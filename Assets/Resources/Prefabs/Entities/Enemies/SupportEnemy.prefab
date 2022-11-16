@@ -101,6 +101,7 @@ MonoBehaviour:
   hp: 10
   typeOfEnemy: special
   animatorController: {fileID: 9100000, guid: 3accd6783d47e72429914c87a8038d40, type: 2}
+  order: 3
 --- !u!61 &1720605664008487347
 BoxCollider2D:
   m_ObjectHideFlags: 0
