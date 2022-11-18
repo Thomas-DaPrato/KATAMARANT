@@ -234,7 +234,9 @@ public class FightManager : MonoBehaviour
         }
         else if (whosIsDead == "Player")
         {
-            //TO DO
+            Destroy(DonjonManager.player);
+            Destroy(GameObject.Find("DonjonManager"));
+            SceneManager.LoadScene("GameOver");
         }
         else
         {
