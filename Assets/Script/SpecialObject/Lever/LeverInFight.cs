@@ -12,8 +12,8 @@ public class LeverInFight : Actions
     }
     public override void DoAction()
     {
-        if(FightManager1Vs1.typeOfEnemy == "lever"){
-            FightManager1Vs1.changeEnemySprite(sprite);
+        if(FightManager.typeOfEnemy == "lever"){
+            //FightManager.changeEnemySprite(sprite);
         }
         else
             Debug.Log("cela n'a aucun effet");

@@ -4,9 +4,25 @@ using UnityEngine;
 
 public class ButtonHeavyAttack : MonoBehaviour
 {
+
     public void HeavyAttack(){
-        if(FightManager1Vs1.endOfFightTuto && FightManager1Vs1.canClickOnButton){
-            FightManager1Vs1.actionsTurn.Add(new HeavyAttackPlayer());
+        if (FightManager.endOfFightTuto && FightManager.canClickOnButton){
+            FightManager.actionPlayer = new HeavyAttackPlayer();
+            switch (FightManager.howManyEnemy){
+                case FightManager.fight.oneEnemy:
+                    FightManager.actions.Add(new HeavyAttackPlayer());
+                    print("actions size : " + FightManager.actions.Count);
+                    FightManager.DoActionsEvent.Invoke();
+                    break;
+                case FightManager.fight.twoEnemies:
+                    GameObject.Find("ContentFightScene").GetComponent<FightManager>().choiceEnemies.SetActive(true);
+                    break;
+                case FightManager.fight.threeEnemies :
+                    GameObject.Find("ContentFightScene").GetComponent<FightManager>().choiceEnemies.SetActive(true);
+                    break;
+
+            }
+ 
         }
             
     }

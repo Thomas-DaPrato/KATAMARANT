@@ -4,10 +4,27 @@ using UnityEngine;
 
 public class ButtonStunt : MonoBehaviour
 {
+
+   
     public void Stunt(){
-        if(FightManager1Vs1.endOfFightTuto && FightManager1Vs1.canClickOnButton){
-            FightManager1Vs1.actionsTurn.Add(new Stunt());
+        if (FightManager.endOfFightTuto && FightManager.canClickOnButton){
+            FightManager.actionPlayer = new Stunt();
+            switch (FightManager.howManyEnemy)
+            {
+                case FightManager.fight.oneEnemy:
+                    FightManager.actions.Add(new HeavyAttackPlayer());
+                    FightManager.DoActionsEvent.Invoke();
+                    break;
+                case FightManager.fight.twoEnemies:
+                    GameObject.Find("ContentFightScene").GetComponent<FightManager>().choiceEnemies.SetActive(true);
+                    break;
+                case FightManager.fight.threeEnemies:
+                    GameObject.Find("ContentFightScene").GetComponent<FightManager>().choiceEnemies.SetActive(true);
+                    break;
+
+            }
+
         }
-            
+
     }
 }

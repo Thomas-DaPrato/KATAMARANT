@@ -410,18 +410,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1053863641}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: DoAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &98818355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2978,18 +2966,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1053863641}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: DoAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &427915987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3667,18 +3643,6 @@ MonoBehaviour:
       - m_Target: {fileID: 538638431}
         m_TargetAssemblyTypeName: ButtonHeavyAttack, Assembly-CSharp
         m_MethodName: HeavyAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1053863641}
-        m_TargetAssemblyTypeName: CombatManager, Assembly-CSharp
-        m_MethodName: DoAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5465,7 +5429,7 @@ GameObject:
   - component: {fileID: 1053863639}
   - component: {fileID: 1053863641}
   m_Layer: 5
-  m_Name: ContentSceneCombat
+  m_Name: ContentFightScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5543,11 +5507,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1053863637}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51427a8c286772544a2be58faa960c5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6abd73d7ff6132d48b94092e58eaeee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyDisplay: {fileID: 2050706471}
-  whosIsDead: 
+  playerDisplay: {fileID: 441719944}
+  enemiesDisplay:
+  - {fileID: 2050706471}
+  choiceEnemies: {fileID: 0}
 --- !u!1 &1058750131
 GameObject:
   m_ObjectHideFlags: 0
@@ -8447,18 +8413,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1053863641}
-        m_TargetAssemblyTypeName: FightManager, Assembly-CSharp
-        m_MethodName: DoAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1761614502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9364,7 +9318,7 @@ Animator:
   m_GameObject: {fileID: 2050706471}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0e3c14026f7450d45af6f857ffa81294, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

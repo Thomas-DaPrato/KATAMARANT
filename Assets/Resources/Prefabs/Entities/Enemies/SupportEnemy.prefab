@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686108733636825073}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,7 +100,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   typeOfEnemy: special
-  animatorController: {fileID: 9100000, guid: 3accd6783d47e72429914c87a8038d40, type: 2}
+  animatorsController:
+  - {fileID: 9100000, guid: a76866d3c051bc74b909cf478f0e0654, type: 2}
+  - {fileID: 9100000, guid: e3928e16c1fc00f468d370c0613d8acd, type: 2}
+  - {fileID: 9100000, guid: 904902bb6ce052846add6785f5b86f90, type: 2}
   order: 3
 --- !u!61 &1720605664008487347
 BoxCollider2D:

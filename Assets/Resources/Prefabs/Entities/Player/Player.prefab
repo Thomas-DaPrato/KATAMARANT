@@ -206,6 +206,8 @@ MonoBehaviour:
   maxHp: 10
   camera: {fileID: 7221557890730300281}
   reaction: {fileID: 5589375838160948629}
+  animatorsController:
+  - {fileID: 9100000, guid: 66311fa41884e117e96f7d979b101adc, type: 2}
 --- !u!50 &3088748880188050689
 Rigidbody2D:
   serializedVersion: 4

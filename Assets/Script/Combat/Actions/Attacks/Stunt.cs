@@ -6,7 +6,7 @@ public class Stunt : Actions
 {
     public override void DoAction()
     {
-        FightManager1Vs1.timeStunt = 2; 
+        FightManager.timeStunt = 2; 
     }
 
     public override int GetPriority()

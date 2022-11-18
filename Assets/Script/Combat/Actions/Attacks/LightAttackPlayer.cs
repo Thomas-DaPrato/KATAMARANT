@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LightAttackPlayer : Actions
 {
     public override void DoAction()
     {
-        FightManager1Vs1.hpEnemy.value = FightManager1Vs1.hpEnemy.value - (2 + FightManager1Vs1.buffStat); 
+        foreach (Slider enemyHp in FightManager.enemiesHP)
+            enemyHp.value = enemyHp.value - (2 + FightManager.buffStat);
     }
 
     public override int GetPriority()

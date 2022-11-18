@@ -10,7 +10,7 @@ public class Enemies : MonoBehaviour
 
     public string typeOfEnemy;
 
-    public List<RuntimeAnimatorController> animatorController;
+    public List<RuntimeAnimatorController> animatorsController;
 
     public int order;
 

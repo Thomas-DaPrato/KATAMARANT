@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5248778288311537280}
   - component: {fileID: 3713434103733990552}
   - component: {fileID: 102262524389192815}
-  - component: {fileID: 6550642422665905526}
+  - component: {fileID: 8599575095617371079}
   m_Layer: 0
   m_Name: Mob28
   m_TagString: Untagged
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &6550642422665905526
+--- !u!95 &8599575095617371079
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0

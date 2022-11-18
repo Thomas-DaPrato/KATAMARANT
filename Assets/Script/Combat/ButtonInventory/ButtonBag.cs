@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonBag : MonoBehaviour
 {
     public void DisplayInventory(){
-        FightManager1Vs1.inventoryBag.SetActive(true);
-        FightManager1Vs1.inventorySpecialObject.SetActive(false);
+        FightManager.inventoryBag.SetActive(true);
+        FightManager.inventorySpecialObject.SetActive(false);
     }
 }
