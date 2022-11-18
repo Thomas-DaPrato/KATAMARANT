@@ -72,7 +72,11 @@ public class FightManager : MonoBehaviour
         InitChoiceEnemie();
         InitButton();
         InitAnimator();
-        actions.Add(new AttackEnemy());
+        whosIsDead = "";
+        actions = new List<Actions>();
+        if (typeOfEnemy != "lever")
+            actions.Add(new AttackEnemy());
+        print("action : " + actions.Count);
         DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
     }
@@ -84,6 +88,7 @@ public class FightManager : MonoBehaviour
     }
 
     public void InitEnemies(){
+        enemiesHP = new List<Slider>();
         for (int i = 0; i < enemies.Count; i += 1){
             enemiesDisplay[i].GetComponent<Image>().sprite = enemies[i].GetComponent<SpriteRenderer>().sprite;
             enemiesHP.Add(enemiesDisplay[i].GetComponentInChildren<Slider>());
@@ -124,7 +129,8 @@ public class FightManager : MonoBehaviour
         listInventory = GameObject.Find("ListInventory");
         inventoryBag = GameObject.Find("InventoryBag");
         inventorySpecialObject = GameObject.Find("InventorySpecialObjet");
-        //initInventory
+        InitInventoryBag();
+        InitInventorySpecialObject();
         listOffensiveAttack.SetActive(false);
         listSecretTechnic.SetActive(false);
         listInventory.SetActive(false);
@@ -141,6 +147,8 @@ public class FightManager : MonoBehaviour
 
 
 
+
+
     public void AdjustActionsPriority(){
         if (actions[0].GetPriority() > actions[1].GetPriority()){
             Actions temp = actions[0];
@@ -152,8 +160,10 @@ public class FightManager : MonoBehaviour
     public void DoActions(){
         if (endOfFightTuto && canClickOnButton){
             canClickOnButton = false;
-            if (timeStunt == 0)
+            if (actions.Count > 1 && timeStunt == 0){
                 AdjustActionsPriority();
+            } 
+                
             StartCoroutine(launchAnimation());
         }
 
@@ -186,6 +196,7 @@ public class FightManager : MonoBehaviour
         bool enemiesDead = false;
 
         foreach (Slider slider in enemiesHP){
+            print("slider value " + slider.value);
             if (slider.value != 0){
                 enemiesDead = false;
                 break;
@@ -218,6 +229,7 @@ public class FightManager : MonoBehaviour
     }
 
     public void EndOfTurn(){
+        print("whoIsdead : " + whosIsDead);
         wichEnemyAttack += 1;
         if (wichEnemyAttack == enemiesDisplay.Count)
             wichEnemyAttack = 0;
@@ -260,16 +272,41 @@ public class FightManager : MonoBehaviour
                     DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
                     break;
                 }
-            if (GameObject.FindGameObjectWithTag("Enemy") == null)
+            if (GameObject.FindGameObjectWithTag("HitBox") == null)
                 DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().enemies = false;
             DonjonManager.player.SetActive(true);
             SceneManager.LoadScene("Room");
         }
 
-
-
     }
 
-     
+    public void InitInventoryBag()
+    {
+        for (int i = 0; i < Player.inventoryBag.Count; i += 1)
+        {
+            if (Player.inventoryBag[i] == "popo")
+            {
+                GameObject popo = Instantiate(Resources.Load("Prefabs/Props/Popo/PopoInInventory") as GameObject, inventoryBag.transform, true);
+                popo.name = "PopoInInventory";
+                popo.transform.position = new Vector2((inventoryBag.transform.position.x - 225) + (150 * i + 75), inventoryBag.transform.position.y);
+                popo.GetComponent<Button>().onClick.AddListener(DoActions);
+            }
+        }
+    }
+
+    public void InitInventorySpecialObject()
+    {
+        for (int i = 0; i < Player.inventorySpecialObject.Count; i += 1)
+        {
+            if (Player.inventorySpecialObject[i] == "lever")
+            {
+                GameObject lever = Instantiate(Resources.Load("Prefabs/Props/Lever/LeverInInventory") as GameObject, inventorySpecialObject.transform, true);
+                lever.name = "LeverInInventory";
+                lever.transform.position = new Vector2((inventorySpecialObject.transform.position.x - 225) + (150 * i + 75), inventorySpecialObject.transform.position.y);
+                lever.GetComponent<Button>().onClick.AddListener(DoActions);
+            }
+        }
+    }
+
 
 }

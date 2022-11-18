@@ -50,6 +50,7 @@ MonoBehaviour:
   reactions:
   - Ah ! J'avais faim !
   - Mais je n'avais pas commander de BigMac !
+  - Je vais lacher un croc !
 --- !u!61 &5234995485466971549
 BoxCollider2D:
   m_ObjectHideFlags: 0

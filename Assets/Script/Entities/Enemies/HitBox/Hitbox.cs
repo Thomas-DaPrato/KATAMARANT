@@ -7,6 +7,7 @@ using TMPro;
 public class Hitbox : MonoBehaviour
 {
     public List<GameObject> enemies;
+    public string typeOfEnemy;
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.name == "Player")
@@ -30,6 +31,7 @@ public class Hitbox : MonoBehaviour
         gameObject.tag = "ToFight";
         FightManager.player = player;
         FightManager.enemies = enemies;
+        FightManager.typeOfEnemy = typeOfEnemy;
         switch (enemies.Count){
             case 1:
                 FightManager.howManyEnemy = FightManager.fight.oneEnemy;
