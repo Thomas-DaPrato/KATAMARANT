@@ -30,7 +30,7 @@ public class DonjonManager : MonoBehaviour
         player.name = "Player";
         player.GetComponent<Player>().initPlayer(rooms[currentRoom].GetComponent<RoomManager>(),rooms[currentRoom].GetComponent<RoomManager>().widthRoom/2,0);
         DontDestroyOnLoad(player);
-
+        GameObject.Find("Player").GetComponent<Player>().map.GetComponent<Map>().ChangeColor(DonjonManager.currentRoom);
     }
 
     public void AddRoom(string nameRoom){

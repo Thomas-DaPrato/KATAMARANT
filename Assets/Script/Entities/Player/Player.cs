@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
 
     public GameObject reaction;
 
+    public GameObject map;
+
+    public RuntimeAnimatorController animatorInRoom;
 
     public void movePlayer(String direction){
         switch(direction){
@@ -54,6 +57,7 @@ public class Player : MonoBehaviour
         currentRoom = myCurrentRoom;
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
+        gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorInRoom;
 
     }
 
