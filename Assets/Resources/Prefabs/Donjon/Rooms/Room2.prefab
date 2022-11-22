@@ -1481,6 +1481,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7865505694389387591, guid: b58ed5c1ee4c43dcda38c6c225ba4d65, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 7865505694389387591, guid: b58ed5c1ee4c43dcda38c6c225ba4d65, type: 3}
       propertyPath: m_Name
       value: SpawnPassifMob
       objectReference: {fileID: 0}

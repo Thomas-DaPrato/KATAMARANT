@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerBuffStat
+  m_Name: PlayerLightAttack
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -78,7 +78,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 63ddeef1abdfaa6ce9ad14d59b81885a, type: 3}
     - time: 0.5
-      value: {fileID: 21300000, guid: 35666ecc855103d5a83a4fe0dbf3c5be, type: 3}
+      value: {fileID: 21300000, guid: d076e8cb2ab6a354fa1c598e634921bb, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: 63ddeef1abdfaa6ce9ad14d59b81885a, type: 3}
     attribute: m_Sprite
@@ -115,7 +115,7 @@ AnimationClip:
       isPPtrCurve: 0
     pptrCurveMapping:
     - {fileID: 21300000, guid: 63ddeef1abdfaa6ce9ad14d59b81885a, type: 3}
-    - {fileID: 21300000, guid: 35666ecc855103d5a83a4fe0dbf3c5be, type: 3}
+    - {fileID: 21300000, guid: d076e8cb2ab6a354fa1c598e634921bb, type: 3}
     - {fileID: 21300000, guid: 63ddeef1abdfaa6ce9ad14d59b81885a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2

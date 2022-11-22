@@ -10,8 +10,7 @@ public class Player : MonoBehaviour
 
     public static RoomManager currentRoom;
 
-    public int hp = 10;
-    public int maxHp = 10;
+    public int maxHp = 16;
 
     public static List<string> inventoryBag = new List<string>(3);
     public static List<string> inventorySpecialObject = new List<string>(3); 

@@ -16,16 +16,16 @@ public class FightManager : MonoBehaviour
     ///Enemies
     public static List<GameObject> enemies = new List<GameObject>();
     public List<GameObject> enemiesDisplay;
-    public static List<Slider> enemiesHP = new List<Slider>();
+    public static List<Slider> enemiesHP ;
 
     //Turn
-    public static List<Actions> actions = new List<Actions>();
+    public static List<Actions> actions;
     public static Actions actionPlayer;
 
     //Animator
     public static Animator playerAnimator;
 
-    public static List<Animator> enemiesAnimator = new List<Animator>();
+    public static List<Animator> enemiesAnimator ;
 
     public static int wichEnemyToFight = 0;
     public static int wichEnemyAttack = 0;
@@ -40,13 +40,13 @@ public class FightManager : MonoBehaviour
     public GameObject choiceEnemies;
 
     //variables
-    public static bool endOfFightTuto = false;
-    public static bool canClickOnButton = true;
-    public static int timeStunt = 0;
-    public static int buffStat = 0;
-    public static int buffStatTimer = 0;
+    public static bool endOfFightTuto;
+    public static bool canClickOnButton ;
+    public static int timeStunt;
+    public static int buffStat;
+    public static int buffStatTimer;
     public static string typeOfEnemy;
-    public static string whosIsDead = "";
+    public static string whosIsDead;
 
     public static UnityEvent DoActionsEvent = new UnityEvent();
 
@@ -65,6 +65,7 @@ public class FightManager : MonoBehaviour
 
     public void InitFightManager(){
         DoActionsEvent.AddListener(DoActions);
+        InitStaticVariable();
         if (howManyEnemy != fight.oneEnemy)
             endOfFightTuto = true;
         InitPlayer();
@@ -72,11 +73,8 @@ public class FightManager : MonoBehaviour
         InitChoiceEnemie();
         InitButton();
         InitAnimator();
-        whosIsDead = "";
-        actions = new List<Actions>();
         if (typeOfEnemy != "lever")
             actions.Add(new AttackEnemy());
-        print("action : " + actions.Count);
         DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
     }
@@ -88,7 +86,6 @@ public class FightManager : MonoBehaviour
     }
 
     public void InitEnemies(){
-        enemiesHP = new List<Slider>();
         for (int i = 0; i < enemies.Count; i += 1){
             enemiesDisplay[i].GetComponent<Image>().sprite = enemies[i].GetComponent<SpriteRenderer>().sprite;
             enemiesHP.Add(enemiesDisplay[i].GetComponentInChildren<Slider>());
@@ -145,6 +142,18 @@ public class FightManager : MonoBehaviour
         }
     }
 
+    public void InitStaticVariable(){
+        endOfFightTuto = false;
+        canClickOnButton = true;
+        timeStunt = 0;
+        buffStat = 1;
+        buffStatTimer = 0;
+        whosIsDead = "";
+        enemiesAnimator = new List<Animator>();
+        enemiesHP = new List<Slider>();
+        actions = new List<Actions>();
+}
+
 
 
 
@@ -174,9 +183,11 @@ public class FightManager : MonoBehaviour
         foreach (Actions action in actions){
             if (action.GetEntitie() == "Player")
                 playerAnimator.SetBool(action.GetAnimation() + wichEnemyToFight, true);
-            else
+            else{
                 if (enemiesAnimator[wichEnemyAttack] != null)
-                    enemiesAnimator[wichEnemyAttack].SetBool("enemyAttacking", true);
+                        enemiesAnimator[wichEnemyAttack].SetBool("enemyAttacking", true);
+            }
+                
             yield return new WaitForSeconds(1);
             action.DoAction();
             if (action.GetEntitie() == "Player")
@@ -196,7 +207,6 @@ public class FightManager : MonoBehaviour
         bool enemiesDead = false;
 
         foreach (Slider slider in enemiesHP){
-            print("slider value " + slider.value);
             if (slider.value != 0){
                 enemiesDead = false;
                 break;
@@ -208,14 +218,12 @@ public class FightManager : MonoBehaviour
 
         foreach(Slider slider in enemiesHP){
             if(slider.value == 0){
-                Destroy(slider.gameObject.transform.parent.gameObject);
-                enemiesDisplay.Remove(slider.gameObject.transform.parent.gameObject);
+                enemiesDisplay[enemiesDisplay.IndexOf(slider.gameObject.transform.parent.gameObject)].SetActive(false);
             }
         }
 
 
         if (playerHp.value == 0){
-            print("t mort");
             whosIsDead = "Player";
             return true;
         }
@@ -229,10 +237,11 @@ public class FightManager : MonoBehaviour
     }
 
     public void EndOfTurn(){
-        print("whoIsdead : " + whosIsDead);
         wichEnemyAttack += 1;
-        if (wichEnemyAttack == enemiesDisplay.Count)
+        if (wichEnemyAttack >= enemiesDisplay.Count)
             wichEnemyAttack = 0;
+        if (enemiesDisplay[wichEnemyAttack].GetComponentInChildren<Slider>().value == 0)
+            wichEnemyAttack += 1;
         if (whosIsDead == "")
         {
             actions = new List<Actions>();
@@ -242,6 +251,8 @@ public class FightManager : MonoBehaviour
                 actions.Add(new AttackEnemy());
             if (buffStatTimer > 0)
                 buffStatTimer -= 1;
+            if (buffStatTimer == 0)
+                buffStat = 1;
             canClickOnButton = true;
         }
         else if (whosIsDead == "Player")
@@ -252,14 +263,13 @@ public class FightManager : MonoBehaviour
         }
         else
         {
-            print("fin de combat");
             canClickOnButton = true;
             DonjonManager.rooms[DonjonManager.currentRoom].SetActive(true);
 
             if (typeOfEnemy == "lever")
             {
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().sprite = enemiesDisplay[0].GetComponent<Image>().sprite;
-                GameObject.Find("LeverToFight").GetComponent<BoxCollider2D>().isTrigger = false;
+                Destroy(GameObject.Find("LeverToFight").transform.parent.GetComponent<BoxCollider2D>()  );
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().flipX = true;
             }
             else

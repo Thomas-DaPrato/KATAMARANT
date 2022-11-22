@@ -14,7 +14,7 @@ public class PopoInFight : Actions
     }
     public override void DoAction()
     {
-        playerDisplay.GetComponentInChildren<Slider>().value = playerDisplay.GetComponentInChildren<Slider>().value + 7;
+        playerDisplay.GetComponentInChildren<Slider>().value = playerDisplay.GetComponentInChildren<Slider>().value + 8;
     }
 
     public override int GetPriority()
