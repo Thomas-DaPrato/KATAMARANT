@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TankAttack2 : MonoBehaviour
+public class TankDevastingAttack : Actions
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void DoAction()
     {
-        
+        FightManager.playerHp.value -= 10;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override string GetAnimation()
     {
-        
+        return "TankDevastingAttack";
+    }
+
+    public override string GetEntitie()
+    {
+        return "Enemy";
+    }
+
+    public override int GetPriority()
+    {
+        return 10;
     }
 }

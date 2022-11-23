@@ -6,7 +6,7 @@ public class SupportAttack : Actions
 {
     public override void DoAction()
     {
-        
+        FightManager.playerHp.value -= 2;
     }
 
     public override string GetAnimation()
@@ -21,6 +21,6 @@ public class SupportAttack : Actions
 
     public override int GetPriority()
     {
-        
+        return 3;
     }
 }
