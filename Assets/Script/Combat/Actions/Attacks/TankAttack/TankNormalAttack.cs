@@ -16,7 +16,7 @@ public class TankNormalAttack : Actions
 
     public override string GetEntitie()
     {
-        return "Enemy";
+        return "Tank";
     }
 
     public override int GetPriority()

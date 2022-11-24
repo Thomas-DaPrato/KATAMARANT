@@ -55,7 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   widthRoom: 11
   heightRoom: 11
-  enemies: 1
+  enemies: 0
   spawnLever: {fileID: 0}
   componentsInRoom: []
 --- !u!1 &4806053889188192239

@@ -16,7 +16,7 @@ public class BasicBuffStat : Actions
 
     public override string GetEntitie()
     {
-        return "Enemy";
+        return "Basic";
     }
 
     public override int GetPriority()

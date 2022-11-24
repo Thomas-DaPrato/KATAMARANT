@@ -8,7 +8,8 @@ public class SupportAttackHeal : Actions
     public override void DoAction()
     {
         foreach(Slider slider in FightManager.enemiesHP){
-            slider.value += 3;
+            if(slider.value != 0)
+                slider.value += 3;
         }
     }
 
@@ -19,7 +20,7 @@ public class SupportAttackHeal : Actions
 
     public override string GetEntitie()
     {
-        return "Enemy";
+        return "Support";
     }
 
     public override int GetPriority()

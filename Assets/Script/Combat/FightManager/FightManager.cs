@@ -187,7 +187,7 @@ public void AdjustActionsPriority(){
                 playerAnimator.SetBool(action.GetAnimation() + wichEnemyToFight, true);
             else{
                 if (enemiesAnimator[wichEnemyAttack] != null)
-                        enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), true);
+                     enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), true);
             }
                 
             yield return new WaitForSeconds(1);
@@ -199,7 +199,7 @@ public void AdjustActionsPriority(){
                 if (enemiesAnimator[wichEnemyAttack] != null)
                     enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), false);
             yield return new WaitForSeconds(0.5f);
-            if (CheckIfEndOfFight())
+            if (CheckIfEndOfFight() || actions.Count == 1)
                 break;
         }
         EndOfTurn();
@@ -219,9 +219,12 @@ public void AdjustActionsPriority(){
             }   
         }
 
-        foreach(Slider slider in enemiesHP){
-            if(slider.value == 0){
-                enemiesDisplay[enemiesDisplay.IndexOf(slider.gameObject.transform.parent.gameObject)].SetActive(false);
+        for(int i = 0; i < enemiesHP.Count; i+=1){
+            if(enemiesHP[i].value == 0){
+                enemiesDisplay[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].SetActive(false);
+                if (enemies[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].GetComponent<Enemies>().typeOfEnemy == actions[1].GetEntitie())
+                    actions.Remove(actions[1]);
+                enemiesHP.Remove(enemiesHP[i]);
             }
         }
 

@@ -16,7 +16,7 @@ public class SupportAttack : Actions
 
     public override string GetEntitie()
     {
-        return "Enemy";
+        return "Support";
     }
 
     public override int GetPriority()
