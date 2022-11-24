@@ -27,8 +27,8 @@ public class FightManager : MonoBehaviour
 
     public static List<Animator> enemiesAnimator ;
 
-    public static int wichEnemyToFight = 0;
-    public static int wichEnemyAttack = 0;
+    public static int wichEnemyToFight;
+    public static int wichEnemyAttack;
 
     //Button
     public static GameObject listOffensiveAttack;
@@ -74,7 +74,7 @@ public class FightManager : MonoBehaviour
         InitButton();
         InitAnimator();
         if (typeOfEnemy != "lever")
-            actions.Add(new AttackEnemy());
+            actions.Add(enemies[wichEnemyAttack].GetComponent<Enemies>().GetAction());
         DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
     }
@@ -152,13 +152,15 @@ public class FightManager : MonoBehaviour
         enemiesAnimator = new List<Animator>();
         enemiesHP = new List<Slider>();
         actions = new List<Actions>();
-}
+        wichEnemyToFight = 0;
+        wichEnemyAttack = 0;
+    }
 
 
 
 
 
-    public void AdjustActionsPriority(){
+public void AdjustActionsPriority(){
         if (actions[0].GetPriority() > actions[1].GetPriority()){
             Actions temp = actions[0];
             actions[0] = actions[1];
@@ -173,28 +175,29 @@ public class FightManager : MonoBehaviour
                 AdjustActionsPriority();
             } 
                 
-            StartCoroutine(launchAnimation());
+            StartCoroutine(LaunchAnimation());
         }
 
     }
 
-    public IEnumerator launchAnimation(){
+    public IEnumerator LaunchAnimation(){
         enemiesAnimator[wichEnemyAttack].SetInteger("position", wichEnemyAttack);
         foreach (Actions action in actions){
             if (action.GetEntitie() == "Player")
                 playerAnimator.SetBool(action.GetAnimation() + wichEnemyToFight, true);
             else{
                 if (enemiesAnimator[wichEnemyAttack] != null)
-                        enemiesAnimator[wichEnemyAttack].SetBool("enemyAttacking", true);
+                        enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), true);
             }
                 
             yield return new WaitForSeconds(1);
+            print("action : " + action.GetAnimation());
             action.DoAction();
             if (action.GetEntitie() == "Player")
                 playerAnimator.SetBool(action.GetAnimation() + wichEnemyToFight, false);
             else
                 if (enemiesAnimator[wichEnemyAttack] != null)
-                enemiesAnimator[wichEnemyAttack].SetBool("enemyAttacking", false);
+                    enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), false);
             yield return new WaitForSeconds(0.5f);
             if (CheckIfEndOfFight())
                 break;
@@ -248,7 +251,7 @@ public class FightManager : MonoBehaviour
             if (timeStunt > 0)
                 timeStunt -= 1;
             if (timeStunt == 0)
-                actions.Add(new AttackEnemy());
+                actions.Add(enemies[wichEnemyAttack].GetComponent<Enemies>().GetAction());
             if (buffStatTimer > 0)
                 buffStatTimer -= 1;
             if (buffStatTimer == 0)
@@ -266,7 +269,7 @@ public class FightManager : MonoBehaviour
             canClickOnButton = true;
             DonjonManager.rooms[DonjonManager.currentRoom].SetActive(true);
 
-            if (typeOfEnemy == "lever")
+            if (typeOfEnemy == "Lever")
             {
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().sprite = enemiesDisplay[0].GetComponent<Image>().sprite;
                 Destroy(GameObject.Find("LeverToFight").transform.parent.GetComponent<BoxCollider2D>()  );

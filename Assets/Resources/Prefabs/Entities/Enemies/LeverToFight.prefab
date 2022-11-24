@@ -46,10 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  typeOfEnemy: lever
+  typeOfEnemy: Lever
   animatorsController:
   - {fileID: 9100000, guid: 0e3c14026f7450d45af6f857ffa81294, type: 2}
   order: 0
+  enemyActions: []
+  percentageNormalAttack: 0
 --- !u!212 &4723532806046789487
 SpriteRenderer:
   m_ObjectHideFlags: 0

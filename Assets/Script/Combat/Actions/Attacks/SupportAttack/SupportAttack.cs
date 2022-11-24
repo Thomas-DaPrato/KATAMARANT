@@ -11,7 +11,7 @@ public class SupportAttack : Actions
 
     public override string GetAnimation()
     {
-        return "AttackEnemy";
+        return "SupportNormalAttack";
     }
 
     public override string GetEntitie()

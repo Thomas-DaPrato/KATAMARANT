@@ -11,7 +11,7 @@ public class TankNormalAttack : Actions
 
     public override string GetAnimation()
     {
-        return "AttackEnemy";
+        return "TankNormalAttack";
     }
 
     public override string GetEntitie()

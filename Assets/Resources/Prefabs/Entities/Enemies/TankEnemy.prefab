@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 15
-  typeOfEnemy: tank
+  typeOfEnemy: Tank
   animatorsController:
   - {fileID: 9100000, guid: f2fc19ac158bb3836ac2af13fa7c0dae, type: 2}
   - {fileID: 9100000, guid: 16f93c7e9c7763b42b4d674d294ce95b, type: 2}
   - {fileID: 9100000, guid: abf24721bd5d2cb408e400edd021a97c, type: 2}
   order: 1
+  percentageNormalAttack: 80
 --- !u!95 &1549770164186337172
 Animator:
   serializedVersion: 4

@@ -6,7 +6,7 @@ public class AttackEnemy : Actions
 {
 
     public override void DoAction(){
-        FightManager.playerHp.value = FightManager.playerHp.value - 3;
+        FightManager.playerHp.value -= 3;
     }
 
     public override int GetPriority(){

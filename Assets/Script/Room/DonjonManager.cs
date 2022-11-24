@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DonjonManager : MonoBehaviour
 {
-    public static Dictionary<string, GameObject> rooms = new Dictionary<string, GameObject>();
+    public static Dictionary<string, GameObject> rooms;
 
     public  static string currentRoom = "";
 
@@ -15,6 +15,7 @@ public class DonjonManager : MonoBehaviour
     public static bool endOfNarrativeIntro = false;
 
     public void Start(){
+        rooms = new Dictionary<string, GameObject>();
         passivesMobs = Resources.LoadAll("Prefabs/Entities/PassivesMobs");
 
 

@@ -8,7 +8,7 @@ public class HeavyAttackPlayer : Actions
 
     public override void DoAction()
     {
-        FightManager.enemiesHP[FightManager.wichEnemyToFight].value = FightManager.enemiesHP[FightManager.wichEnemyToFight].value - (5 * FightManager.buffStat);
+        FightManager.enemiesHP[FightManager.wichEnemyToFight].value -= (5 * FightManager.buffStat);
     }
 
     public override int GetPriority()

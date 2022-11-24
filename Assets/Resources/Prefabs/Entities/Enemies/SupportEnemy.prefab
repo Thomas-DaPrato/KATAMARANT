@@ -99,12 +99,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 10
-  typeOfEnemy: special
+  typeOfEnemy: Support
   animatorsController:
   - {fileID: 9100000, guid: a76866d3c051bc74b909cf478f0e0654, type: 2}
   - {fileID: 9100000, guid: e3928e16c1fc00f468d370c0613d8acd, type: 2}
   - {fileID: 9100000, guid: 904902bb6ce052846add6785f5b86f90, type: 2}
   order: 3
+  percentageNormalAttack: 70
 --- !u!95 &2941756179653350407
 Animator:
   serializedVersion: 4
