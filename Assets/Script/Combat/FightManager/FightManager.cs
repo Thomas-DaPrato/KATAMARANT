@@ -43,8 +43,9 @@ public class FightManager : MonoBehaviour
     public static bool endOfFightTuto;
     public static bool canClickOnButton ;
     public static int timeStunt;
-    public static int buffStat;
-    public static int buffStatTimer;
+    public static int buffStatPlayer;
+    public static int buffStatPlayerTimer;
+    public static int buffStatEnemy;
     public static string typeOfEnemy;
     public static string whosIsDead;
 
@@ -73,7 +74,8 @@ public class FightManager : MonoBehaviour
         InitChoiceEnemie();
         InitButton();
         InitAnimator();
-        if (typeOfEnemy != "lever")
+        print("typeOfEnemy " + typeOfEnemy);
+        if (typeOfEnemy != "Lever")
             actions.Add(enemies[wichEnemyAttack].GetComponent<Enemies>().GetAction());
         DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
@@ -146,8 +148,9 @@ public class FightManager : MonoBehaviour
         endOfFightTuto = false;
         canClickOnButton = true;
         timeStunt = 0;
-        buffStat = 1;
-        buffStatTimer = 0;
+        buffStatPlayer = 1;
+        buffStatPlayerTimer = 0;
+        buffStatEnemy = 1;
         whosIsDead = "";
         enemiesAnimator = new List<Animator>();
         enemiesHP = new List<Slider>();
@@ -219,14 +222,15 @@ public void AdjustActionsPriority(){
             }   
         }
 
-        for(int i = 0; i < enemiesHP.Count; i+=1){
-            if(enemiesHP[i].value == 0){
-                enemiesDisplay[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].SetActive(false);
-                if (enemies[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].GetComponent<Enemies>().typeOfEnemy == actions[1].GetEntitie())
-                    actions.Remove(actions[1]);
-                enemiesHP.Remove(enemiesHP[i]);
+        if(typeOfEnemy != "Lever")
+            for(int i = 0; i < enemiesHP.Count; i+=1){
+                if(enemiesHP[i].value == 0){
+                    enemiesDisplay[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].SetActive(false);
+                    if (enemies[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].GetComponent<Enemies>().typeOfEnemy == actions[1].GetEntitie())
+                        actions.Remove(actions[1]);
+                    enemiesHP.Remove(enemiesHP[i]);
+                }
             }
-        }
 
 
         if (playerHp.value == 0){
@@ -253,12 +257,12 @@ public void AdjustActionsPriority(){
             actions = new List<Actions>();
             if (timeStunt > 0)
                 timeStunt -= 1;
-            if (timeStunt == 0)
+            if (timeStunt == 0 && typeOfEnemy != "Lever")
                 actions.Add(enemies[wichEnemyAttack].GetComponent<Enemies>().GetAction());
-            if (buffStatTimer > 0)
-                buffStatTimer -= 1;
-            if (buffStatTimer == 0)
-                buffStat = 1;
+            if (buffStatPlayerTimer > 0)
+                buffStatPlayerTimer -= 1;
+            if (buffStatPlayerTimer == 0)
+                buffStatPlayer = 1;
             canClickOnButton = true;
         }
         else if (whosIsDead == "Player")
@@ -277,6 +281,8 @@ public void AdjustActionsPriority(){
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().sprite = enemiesDisplay[0].GetComponent<Image>().sprite;
                 Destroy(GameObject.Find("LeverToFight").transform.parent.GetComponent<BoxCollider2D>()  );
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().flipX = true;
+                foreach (GameObject blockedDoor in DonjonManager.bloockedDoors)
+                    blockedDoor.tag = "Untagged";
             }
             else
                 Destroy(GameObject.FindGameObjectWithTag("ToFight"));

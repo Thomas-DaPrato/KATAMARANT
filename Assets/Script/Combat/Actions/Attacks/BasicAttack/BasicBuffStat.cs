@@ -6,7 +6,7 @@ public class BasicBuffStat : Actions
 {
     public override void DoAction()
     {
-        
+        FightManager.buffStatEnemy = 2;
     }
 
     public override string GetAnimation()

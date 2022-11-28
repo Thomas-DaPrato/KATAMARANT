@@ -13,7 +13,7 @@ public class Hitbox : MonoBehaviour
         if (col.name == "Player")
         {
             foreach(GameObject enemy in enemies){
-                if (enemy.GetComponent<Enemies>().typeOfEnemy != "lever")
+                if (enemy.GetComponent<Enemies>().typeOfEnemy != "Lever")
                     LauchFight(col.gameObject);
                 else{
                     if (Player.inventorySpecialObject.Contains("lever"))
@@ -31,6 +31,7 @@ public class Hitbox : MonoBehaviour
         gameObject.tag = "ToFight";
         FightManager.player = player;
         FightManager.enemies = enemies;
+        print("Hitbox typeOfEnemy " + typeOfEnemy);
         FightManager.typeOfEnemy = typeOfEnemy;
         switch (enemies.Count){
             case 1:
@@ -52,7 +53,7 @@ public class Hitbox : MonoBehaviour
     public IEnumerator DisplayMsgMissingLever()
     {
         GameObject.Find("Player").GetComponent<Player>().reaction.SetActive(true);
-        GameObject.Find("Player").GetComponent<Player>().reaction.GetComponentInChildren<TextMeshProUGUI>().text = "Il me manque quelque chose";
+        GameObject.Find("Player").GetComponent<Player>().reaction.GetComponentInChildren<TextMeshProUGUI>().text = "Il me manque quelque chose. Je dois explorer le donjon pour le trouver";
         yield return new WaitForSeconds(1);
         GameObject.Find("Player").GetComponent<Player>().reaction.SetActive(false);
     }

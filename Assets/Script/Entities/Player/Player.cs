@@ -13,7 +13,8 @@ public class Player : MonoBehaviour
     public int maxHp;
 
     public static List<string> inventoryBag = new List<string>(3);
-    public static List<string> inventorySpecialObject = new List<string>(3); 
+    public static List<string> inventorySpecialObject = new List<string>(3);
+    public static bool canMove = true;
 
 
     public Camera camera;
@@ -25,7 +26,8 @@ public class Player : MonoBehaviour
     public RuntimeAnimatorController animatorInRoom;
 
     public void movePlayer(String direction){
-        switch(direction){
+        StartCoroutine(WalkAnimation());
+        switch (direction){
             case "down" :
                 if (coordinates.y - 1 >= 0)
                     coordinates.y = coordinates.y -1;
@@ -47,8 +49,10 @@ public class Player : MonoBehaviour
         }
 
 
+
         gameObject.transform.position = coordinates;
         camera.transform.position = new Vector3(coordinates.x,coordinates.y,-10);
+        
 
     }
 
@@ -62,22 +66,35 @@ public class Player : MonoBehaviour
 
     public void Update(){
 
-        if(Input.GetKeyDown(KeyCode.Z)){
+        if(Input.GetKey(KeyCode.Z)){
+            canMove = false;
             movePlayer("up");
         }
 
-        if(Input.GetKeyDown(KeyCode.S)){
+        if(Input.GetKey(KeyCode.S)){
+            canMove = false;
             movePlayer("down");
         }
 
-        if(Input.GetKeyDown(KeyCode.D)){
+        if(Input.GetKey(KeyCode.D)){
+            canMove = false;
             movePlayer("right");
         }
 
-        if(Input.GetKeyDown(KeyCode.Q)){
+        if(Input.GetKey(KeyCode.Q)){
+            canMove = false;
             movePlayer("left");
         }
+        
 
+    }
+
+    public IEnumerator WalkAnimation(){
+        print("yolo");
+        gameObject.GetComponent<Animator>().SetBool("walking", true);
+        yield return new WaitForSeconds(0.3f);
+        gameObject.GetComponent<Animator>().SetBool("walking", false);
+        canMove = true;
     }
 
 }

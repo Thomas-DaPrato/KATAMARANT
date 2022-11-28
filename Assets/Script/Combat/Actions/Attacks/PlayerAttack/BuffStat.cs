@@ -6,8 +6,8 @@ public class BuffStat : Actions
 {
     public override void DoAction()
     {
-        FightManager.buffStat = 2;
-        FightManager.buffStatTimer = 3; 
+        FightManager.buffStatPlayer = 2;
+        FightManager.buffStatPlayerTimer = 3; 
         
     }
 

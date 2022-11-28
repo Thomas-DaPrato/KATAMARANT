@@ -50,7 +50,7 @@ MonoBehaviour:
   reactions:
   - "Lui, je n'aimeraias pas le crois\xE9 \xE0 la sortie des \xE9coles !"
   - "Il me mate l\xE0 ?"
-  - Tuveux des bonbons !
+  - Tu veux des bonbons !
 --- !u!61 &6871225144560754046
 BoxCollider2D:
   m_ObjectHideFlags: 0

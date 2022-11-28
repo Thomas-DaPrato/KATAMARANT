@@ -8,7 +8,7 @@ public class LightAttackPlayer : Actions
     public override void DoAction()
     {
         foreach (Slider enemyHp in FightManager.enemiesHP)
-            enemyHp.value -= (2 * FightManager.buffStat);
+            enemyHp.value -= (2 * FightManager.buffStatPlayer);
     }
 
     public override int GetPriority()

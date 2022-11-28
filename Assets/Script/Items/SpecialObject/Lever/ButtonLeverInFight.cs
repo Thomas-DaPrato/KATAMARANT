@@ -8,11 +8,15 @@ public class ButtonLeverInFight : MonoBehaviour
     public Sprite sprite;
     public GameObject enemyDisplay;
 
+
     public void Start(){
         enemyDisplay = GameObject.Find("EnemyDisplay");
     }
     public void LeverInFight(){
         FightManager.actions.Add(new LeverInFight(sprite, enemyDisplay));
-        Destroy(gameObject);
+    }
+
+    public static void DestroyGameObject(){
+        Destroy(GameObject.Find("LeverInInventory"));
     }
 }

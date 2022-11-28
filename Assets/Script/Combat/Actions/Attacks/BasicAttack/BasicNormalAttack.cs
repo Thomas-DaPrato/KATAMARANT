@@ -6,7 +6,7 @@ public class BasicNormalAttack : Actions
 {
     public override void DoAction()
     {
-        FightManager.playerHp.value -= 3;
+        FightManager.playerHp.value -= (3 * FightManager.buffStatEnemy);
     }
 
     public override string GetAnimation()

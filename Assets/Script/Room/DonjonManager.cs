@@ -14,8 +14,11 @@ public class DonjonManager : MonoBehaviour
 
     public static bool endOfNarrativeIntro = false;
 
+    public static List<GameObject> bloockedDoors;
+
     public void Start(){
         rooms = new Dictionary<string, GameObject>();
+        bloockedDoors = new List<GameObject>();
         passivesMobs = Resources.LoadAll("Prefabs/Entities/PassivesMobs");
 
 
@@ -39,6 +42,8 @@ public class DonjonManager : MonoBehaviour
         rooms[nameRoom].name = nameRoom;
         rooms[nameRoom].transform.SetParent(gameObject.transform);
         rooms[nameRoom].GetComponent<RoomManager>().InitRoom();
+        foreach (GameObject bloockedDoor in GameObject.FindGameObjectsWithTag("BlockedDoor"))
+            bloockedDoors.Add(bloockedDoor);
     }
 
     public void AddSpawnLever(){

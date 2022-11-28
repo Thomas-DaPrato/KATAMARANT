@@ -16,11 +16,15 @@ public class LeverInFight : Actions
     }
     public override void DoAction()
     {
-        if(FightManager.typeOfEnemy == "lever"){
+        if(FightManager.typeOfEnemy == "Lever"){
             enemyDisplay.GetComponent<Image>().sprite = sprite;
+            ButtonLeverInFight.DestroyGameObject();
         }
-        else
+        else{
             Debug.Log("cela n'a aucun effet");
+            
+        }
+            
     }
 
     public override int GetPriority()
