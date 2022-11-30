@@ -23,8 +23,4 @@ public class SupportAttackHeal : Actions
         return "Support";
     }
 
-    public override int GetPriority()
-    {
-        return 3;
-    }
 }

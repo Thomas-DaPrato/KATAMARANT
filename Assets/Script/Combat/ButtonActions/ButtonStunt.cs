@@ -12,7 +12,7 @@ public class ButtonStunt : MonoBehaviour
             switch (FightManager.howManyEnemy)
             {
                 case FightManager.fight.oneEnemy:
-                    FightManager.actions.Add(new HeavyAttackPlayer());
+                    FightManager.actions.Insert(0,new Stunt());
                     FightManager.DoActionsEvent.Invoke();
                     break;
                 case FightManager.fight.twoEnemies:

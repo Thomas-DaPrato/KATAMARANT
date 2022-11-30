@@ -11,10 +11,6 @@ public class LightAttackPlayer : Actions
             enemyHp.value -= (2 * FightManager.buffStatPlayer);
     }
 
-    public override int GetPriority()
-    {
-        return 2;
-    }
 
     public override string GetEntitie()
     {

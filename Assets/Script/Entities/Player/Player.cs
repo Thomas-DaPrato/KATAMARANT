@@ -66,22 +66,22 @@ public class Player : MonoBehaviour
 
     public void Update(){
 
-        if(Input.GetKey(KeyCode.Z)){
+        if(Input.GetKeyDown(KeyCode.Z)){
             canMove = false;
             movePlayer("up");
         }
 
-        if(Input.GetKey(KeyCode.S)){
+        if(Input.GetKeyDown(KeyCode.S)){
             canMove = false;
             movePlayer("down");
         }
 
-        if(Input.GetKey(KeyCode.D)){
+        if(Input.GetKeyDown(KeyCode.D)){
             canMove = false;
             movePlayer("right");
         }
 
-        if(Input.GetKey(KeyCode.Q)){
+        if(Input.GetKeyDown(KeyCode.Q)){
             canMove = false;
             movePlayer("left");
         }

@@ -6,7 +6,7 @@ public class ButtonBuffStat : MonoBehaviour
 {
     public void BuffStat(){
         if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
-            FightManager.actions.Add(new BuffStat());
+            FightManager.actions.Insert(0,new BuffStat());
             FightManager.DoActionsEvent.Invoke();
         }
 

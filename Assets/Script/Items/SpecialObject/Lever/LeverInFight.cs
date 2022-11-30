@@ -27,10 +27,6 @@ public class LeverInFight : Actions
             
     }
 
-    public override int GetPriority()
-    {
-        return 1;
-    }
 
     public override string GetEntitie()
     {

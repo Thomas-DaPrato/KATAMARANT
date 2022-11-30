@@ -6,7 +6,7 @@ public class ButtonLightAttack : MonoBehaviour
 {
     public void LightAttack(){
         if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
-            FightManager.actions.Add(new LightAttackPlayer());
+            FightManager.actions.Insert(0,new LightAttackPlayer());
             FightManager.DoActionsEvent.Invoke();
         }
             

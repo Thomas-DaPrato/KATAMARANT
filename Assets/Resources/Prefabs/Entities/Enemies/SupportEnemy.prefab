@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23df7dd32baaabd01a646de872fcc05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 10
+  hp: 7
   typeOfEnemy: Support
   animatorsController:
   - {fileID: 9100000, guid: a76866d3c051bc74b909cf478f0e0654, type: 2}

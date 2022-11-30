@@ -10,7 +10,7 @@ public class ButtonHeavyAttack : MonoBehaviour
             FightManager.actionPlayer = new HeavyAttackPlayer();
             switch (FightManager.howManyEnemy){
                 case FightManager.fight.oneEnemy:
-                    FightManager.actions.Add(new HeavyAttackPlayer());
+                    FightManager.actions.Insert(0,new HeavyAttackPlayer());
                     print("actions size : " + FightManager.actions.Count);
                     FightManager.DoActionsEvent.Invoke();
                     break;

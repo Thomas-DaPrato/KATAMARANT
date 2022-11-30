@@ -7,8 +7,8 @@ public class ButtonChoiceEnemy1 : MonoBehaviour
 {
 
     public void ChoiceEnemy1(){
-        FightManager.wichEnemyToFight = 0;
-        FightManager.actions.Add(FightManager.actionPlayer);
+        FightManager.whichEnemyToFight = 0;
+        FightManager.actions.Insert(0,FightManager.actionPlayer);
         gameObject.transform.parent.gameObject.SetActive(false);
         FightManager.DoActionsEvent.Invoke();
     }

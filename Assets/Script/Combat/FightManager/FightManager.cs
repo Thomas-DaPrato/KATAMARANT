@@ -15,7 +15,8 @@ public class FightManager : MonoBehaviour
 
     ///Enemies
     public static List<GameObject> enemies = new List<GameObject>();
-    public List<GameObject> enemiesDisplay;
+    public List<GameObject> enemiesDisplayEditor;
+    public static List<GameObject> enemiesDisplay;
     public static List<Slider> enemiesHP ;
 
     //Turn
@@ -27,8 +28,8 @@ public class FightManager : MonoBehaviour
 
     public static List<Animator> enemiesAnimator ;
 
-    public static int wichEnemyToFight;
-    public static int wichEnemyAttack;
+    public static int whichEnemyToFight;
+    public static int whichEnemyAttack;
 
     //Button
     public static GameObject listOffensiveAttack;
@@ -40,9 +41,10 @@ public class FightManager : MonoBehaviour
     public GameObject choiceEnemies;
 
     //variables
-    public static bool endOfFightTuto;
+    public static bool endOfFightTuto = false;
     public static bool canClickOnButton ;
     public static int timeStunt;
+    public static int whichEnemyIsStunt;
     public static int buffStatPlayer;
     public static int buffStatPlayerTimer;
     public static int buffStatEnemy;
@@ -74,9 +76,8 @@ public class FightManager : MonoBehaviour
         InitChoiceEnemie();
         InitButton();
         InitAnimator();
-        print("typeOfEnemy " + typeOfEnemy);
         if (typeOfEnemy != "Lever")
-            actions.Add(enemies[wichEnemyAttack].GetComponent<Enemies>().GetAction());
+            actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction());
         DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
     }
@@ -85,11 +86,13 @@ public class FightManager : MonoBehaviour
         playerHp = playerDisplay.GetComponentInChildren<Slider>();
         playerHp.maxValue = player.GetComponent<Player>().maxHp;
         playerHp.value = player.GetComponent<Player>().maxHp;
+        playerDisplay.transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
     }
 
     public void InitEnemies(){
         for (int i = 0; i < enemies.Count; i += 1){
             enemiesDisplay[i].GetComponent<Image>().sprite = enemies[i].GetComponent<SpriteRenderer>().sprite;
+            enemiesDisplay[i].transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
             enemiesHP.Add(enemiesDisplay[i].GetComponentInChildren<Slider>());
             enemiesHP[i].maxValue = enemies[i].GetComponent<Enemies>().hp;
             enemiesHP[i].value = enemies[i].GetComponent<Enemies>().hp;
@@ -145,7 +148,7 @@ public class FightManager : MonoBehaviour
     }
 
     public void InitStaticVariable(){
-        endOfFightTuto = false;
+        enemiesDisplay = enemiesDisplayEditor; 
         canClickOnButton = true;
         timeStunt = 0;
         buffStatPlayer = 1;
@@ -155,52 +158,44 @@ public class FightManager : MonoBehaviour
         enemiesAnimator = new List<Animator>();
         enemiesHP = new List<Slider>();
         actions = new List<Actions>();
-        wichEnemyToFight = 0;
-        wichEnemyAttack = 0;
+        whichEnemyToFight = 0;
+        whichEnemyAttack = 0;
+        whichEnemyIsStunt = -1;
     }
 
 
-
-
-
-public void AdjustActionsPriority(){
-        if (actions[0].GetPriority() > actions[1].GetPriority()){
-            Actions temp = actions[0];
-            actions[0] = actions[1];
-            actions[1] = temp;
-        }
-    }
 
     public void DoActions(){
         if (endOfFightTuto && canClickOnButton){
-            canClickOnButton = false;
-            if (actions.Count > 1 && timeStunt == 0){
-                AdjustActionsPriority();
-            } 
-                
+            canClickOnButton = false;               
             StartCoroutine(LaunchAnimation());
         }
 
     }
 
     public IEnumerator LaunchAnimation(){
-        enemiesAnimator[wichEnemyAttack].SetInteger("position", wichEnemyAttack);
+        enemiesAnimator[whichEnemyAttack].SetInteger("position", whichEnemyAttack);
         foreach (Actions action in actions){
-            if (action.GetEntitie() == "Player")
-                playerAnimator.SetBool(action.GetAnimation() + wichEnemyToFight, true);
+            if (action.GetEntitie() == "Player"){
+                playerAnimator.SetBool(action.GetAnimation() + whichEnemyToFight, true);
+            }
+                
             else{
-                if (enemiesAnimator[wichEnemyAttack] != null)
-                     enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), true);
+                if (enemiesAnimator[whichEnemyAttack] != null){
+                    enemiesAnimator[whichEnemyAttack].SetBool(action.GetAnimation(), true);
+                }
             }
                 
             yield return new WaitForSeconds(1);
-            print("action : " + action.GetAnimation());
+                
             action.DoAction();
             if (action.GetEntitie() == "Player")
-                playerAnimator.SetBool(action.GetAnimation() + wichEnemyToFight, false);
+                playerAnimator.SetBool(action.GetAnimation() + whichEnemyToFight, false);
             else
-                if (enemiesAnimator[wichEnemyAttack] != null)
-                    enemiesAnimator[wichEnemyAttack].SetBool(action.GetAnimation(), false);
+                if (enemiesAnimator[whichEnemyAttack] != null){
+                enemiesAnimator[whichEnemyAttack].SetBool(action.GetAnimation(), false);
+                
+            }
             yield return new WaitForSeconds(0.5f);
             if (CheckIfEndOfFight() || actions.Count == 1)
                 break;
@@ -247,22 +242,47 @@ public void AdjustActionsPriority(){
     }
 
     public void EndOfTurn(){
-        wichEnemyAttack += 1;
-        if (wichEnemyAttack >= enemiesDisplay.Count)
-            wichEnemyAttack = 0;
-        if (enemiesDisplay[wichEnemyAttack].GetComponentInChildren<Slider>().value == 0)
-            wichEnemyAttack += 1;
+        whichEnemyAttack += 1;
+        if (whichEnemyAttack >= enemiesDisplay.Count)
+            whichEnemyAttack = 0;
+        if (enemiesDisplay[whichEnemyAttack].GetComponentInChildren<Slider>().value == 0)
+            whichEnemyAttack += 1;
         if (whosIsDead == "")
         {
             actions = new List<Actions>();
-            if (timeStunt > 0)
-                timeStunt -= 1;
-            if (timeStunt == 0 && typeOfEnemy != "Lever")
-                actions.Add(enemies[wichEnemyAttack].GetComponent<Enemies>().GetAction());
+            if (typeOfEnemy != "Lever"){
+                bool canAddAction;
+                print("whichEnemyIsStunt " + whichEnemyIsStunt);
+                print("whichEnemyAttack " + whichEnemyAttack);
+                print("timeStunt " + timeStunt);
+                if (whichEnemyIsStunt == whichEnemyAttack && timeStunt > 0){
+                    timeStunt -= 1;
+                    canAddAction = false;
+                    print("timeStunt " + timeStunt);
+                }
+                else
+                    canAddAction = true;
+                    
+                if (whichEnemyIsStunt == whichEnemyAttack && timeStunt == 0){
+                    print("fin de stunt");
+                    enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
+                    whichEnemyIsStunt = -1;
+                    canAddAction = true;
+                }
+
+                print("canAddAction " + canAddAction);
+                if(canAddAction)
+                    actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction());
+
+            }
+                
             if (buffStatPlayerTimer > 0)
                 buffStatPlayerTimer -= 1;
-            if (buffStatPlayerTimer == 0)
+            if (buffStatPlayerTimer == 0){
                 buffStatPlayer = 1;
+                playerDisplay.transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
+            }
+                
             canClickOnButton = true;
         }
         else if (whosIsDead == "Player")

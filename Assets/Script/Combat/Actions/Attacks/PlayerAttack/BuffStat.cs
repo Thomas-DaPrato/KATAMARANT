@@ -7,13 +7,9 @@ public class BuffStat : Actions
     public override void DoAction()
     {
         FightManager.buffStatPlayer = 2;
-        FightManager.buffStatPlayerTimer = 3; 
-        
-    }
-
-    public override int GetPriority()
-    {
-        return 10;
+        FightManager.buffStatPlayerTimer = 3;
+        GameObject.Find("PlayerDisplay").transform.GetChild(1).GetComponent<ChangeStatus>().EnableStatus();
+        GameObject.Find("PlayerDisplay").transform.GetChild(1).GetComponent<ChangeStatus>().ChangeStatusToBuff();
     }
 
     public override string GetEntitie()

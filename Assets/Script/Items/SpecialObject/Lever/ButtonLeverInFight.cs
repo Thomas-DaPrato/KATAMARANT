@@ -10,10 +10,10 @@ public class ButtonLeverInFight : MonoBehaviour
 
 
     public void Start(){
-        enemyDisplay = GameObject.Find("EnemyDisplay");
+        enemyDisplay = FightManager.enemiesDisplay[FightManager.whichEnemyToFight];
     }
     public void LeverInFight(){
-        FightManager.actions.Add(new LeverInFight(sprite, enemyDisplay));
+        FightManager.actions.Insert(0,new LeverInFight(sprite, enemyDisplay));
     }
 
     public static void DestroyGameObject(){

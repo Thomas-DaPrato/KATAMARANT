@@ -6,7 +6,7 @@ public class TankDevastingAttack : Actions
 {
     public override void DoAction()
     {
-        FightManager.playerHp.value -= 10;
+        FightManager.playerHp.value -= 8;
     }
 
     public override string GetAnimation()
@@ -19,8 +19,4 @@ public class TankDevastingAttack : Actions
         return "Tank";
     }
 
-    public override int GetPriority()
-    {
-        return 10;
-    }
 }

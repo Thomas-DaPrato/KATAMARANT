@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23df7dd32baaabd01a646de872fcc05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  hp: 13
   typeOfEnemy: Tank
   animatorsController:
   - {fileID: 9100000, guid: f2fc19ac158bb3836ac2af13fa7c0dae, type: 2}

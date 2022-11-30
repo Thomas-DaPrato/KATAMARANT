@@ -9,9 +9,6 @@ public class AttackEnemy : Actions
         FightManager.playerHp.value -= 3;
     }
 
-    public override int GetPriority(){
-        return 5;
-    }
 
     public override string GetEntitie(){
         return "Enemy";

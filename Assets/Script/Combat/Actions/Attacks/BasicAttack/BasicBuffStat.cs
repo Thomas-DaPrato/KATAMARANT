@@ -7,6 +7,8 @@ public class BasicBuffStat : Actions
     public override void DoAction()
     {
         FightManager.buffStatEnemy = 2;
+        FightManager.enemiesDisplay[FightManager.whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().EnableStatus();
+        FightManager.enemiesDisplay[FightManager.whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().ChangeStatusToBuff();
     }
 
     public override string GetAnimation()
@@ -19,8 +21,4 @@ public class BasicBuffStat : Actions
         return "Basic";
     }
 
-    public override int GetPriority()
-    {
-        return 5;
-    }
 }

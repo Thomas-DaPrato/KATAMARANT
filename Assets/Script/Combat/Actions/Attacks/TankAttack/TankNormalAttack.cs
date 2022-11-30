@@ -6,7 +6,7 @@ public class TankNormalAttack : Actions
 {
     public override void DoAction()
     {
-        FightManager.playerHp.value -= 2;
+        FightManager.playerHp.value -= 3;
     }
 
     public override string GetAnimation()
@@ -19,8 +19,4 @@ public class TankNormalAttack : Actions
         return "Tank";
     }
 
-    public override int GetPriority()
-    {
-        return 5;
-    }
 }

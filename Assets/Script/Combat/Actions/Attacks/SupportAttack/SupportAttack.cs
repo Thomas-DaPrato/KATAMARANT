@@ -19,8 +19,4 @@ public class SupportAttack : Actions
         return "Support";
     }
 
-    public override int GetPriority()
-    {
-        return 3;
-    }
 }
