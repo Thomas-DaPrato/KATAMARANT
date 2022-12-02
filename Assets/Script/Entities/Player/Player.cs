@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
 
     public static List<string> inventoryBag = new List<string>(3);
     public static List<string> inventorySpecialObject = new List<string>(3);
-    public static bool canMove = true;
+    public static bool canMove;
+    public static bool isInPause;
 
 
     public Camera camera;
@@ -22,6 +23,8 @@ public class Player : MonoBehaviour
     public GameObject reaction;
 
     public GameObject map;
+
+    public GameObject pause;
 
     public RuntimeAnimatorController animatorInRoom;
 
@@ -61,36 +64,44 @@ public class Player : MonoBehaviour
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
         gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorInRoom;
-
+        pause.SetActive(false);
+        canMove = true;
+        isInPause = false;
     }
 
     public void Update(){
+        if (!isInPause){
+            if(Input.GetKeyDown(KeyCode.Z)){
+                canMove = false;
+                movePlayer("up");
+            }
 
-        if(Input.GetKeyDown(KeyCode.Z)){
-            canMove = false;
-            movePlayer("up");
+            if(Input.GetKeyDown(KeyCode.S)){
+                canMove = false;
+                movePlayer("down");
+            }
+
+            if(Input.GetKeyDown(KeyCode.D)){
+                canMove = false;
+                movePlayer("right");
+            }
+
+            if(Input.GetKeyDown(KeyCode.Q)){
+                canMove = false;
+                movePlayer("left");
+            }
         }
 
-        if(Input.GetKeyDown(KeyCode.S)){
-            canMove = false;
-            movePlayer("down");
+        if (Input.GetKeyDown(KeyCode.Escape)){
+            isInPause = !isInPause;
+            pause.SetActive(!pause.activeSelf);
         }
-
-        if(Input.GetKeyDown(KeyCode.D)){
-            canMove = false;
-            movePlayer("right");
-        }
-
-        if(Input.GetKeyDown(KeyCode.Q)){
-            canMove = false;
-            movePlayer("left");
-        }
+        
         
 
     }
 
     public IEnumerator WalkAnimation(){
-        print("yolo");
         gameObject.GetComponent<Animator>().SetBool("walking", true);
         yield return new WaitForSeconds(0.3f);
         gameObject.GetComponent<Animator>().SetBool("walking", false);

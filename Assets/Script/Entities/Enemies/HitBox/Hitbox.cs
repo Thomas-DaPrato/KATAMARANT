@@ -31,7 +31,6 @@ public class Hitbox : MonoBehaviour
         gameObject.tag = "ToFight";
         FightManager.player = player;
         FightManager.enemies = enemies;
-        print("Hitbox typeOfEnemy " + typeOfEnemy);
         FightManager.typeOfEnemy = typeOfEnemy;
         switch (enemies.Count){
             case 1:

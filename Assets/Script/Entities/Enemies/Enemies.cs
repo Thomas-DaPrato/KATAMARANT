@@ -37,7 +37,6 @@ public class Enemies : MonoBehaviour
 
     public Actions GetAction(){
         int i = Random.Range(0, 100);
-        print("i " + i);
         if (i <= percentageNormalAttack)
             return enemyActions[0];
         else

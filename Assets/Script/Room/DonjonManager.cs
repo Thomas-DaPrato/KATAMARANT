@@ -12,11 +12,13 @@ public class DonjonManager : MonoBehaviour
 
     public static Object[] passivesMobs ;
 
-    public static bool endOfNarrativeIntro = false;
+    public static bool endOfNarrativeIntro;
 
     public static List<GameObject> bloockedDoors;
 
     public void Start(){
+        endOfNarrativeIntro = false;
+        NarrativeIntro.indice = 0;
         rooms = new Dictionary<string, GameObject>();
         bloockedDoors = new List<GameObject>();
         passivesMobs = Resources.LoadAll("Prefabs/Entities/PassivesMobs");
@@ -58,6 +60,30 @@ public class DonjonManager : MonoBehaviour
                 Destroy(rooms[key].GetComponent<RoomManager>().spawnLever);
         }
         
+
+    }
+
+    public void AddSpawnPopo()
+    {
+        List<string> potentialRoomForPopo = new List<string>();
+        foreach (string key in rooms.Keys)
+        {
+            if (rooms[key].GetComponent<RoomManager>().spawnPopo != null)
+                potentialRoomForPopo.Add(key);
+        }
+        List<string> roomsPopo = new List<string>();
+        for(int i = 0; i < 3; i += 1){
+            string roomPopo = potentialRoomForPopo[Random.Range(0, potentialRoomForPopo.Count)];
+            roomsPopo.Add(roomPopo);
+            potentialRoomForPopo.Remove(roomPopo);
+        }
+        
+        foreach (string key in rooms.Keys)
+        {
+            if (rooms[key].GetComponent<RoomManager>().spawnLever != null && !roomsPopo.Contains(key))
+                Destroy(rooms[key].GetComponent<RoomManager>().spawnLever);
+        }
+
 
     }
 

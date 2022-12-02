@@ -44,7 +44,7 @@ public class FightManager : MonoBehaviour
     public static bool endOfFightTuto = false;
     public static bool canClickOnButton ;
     public static int timeStunt;
-    public static int whichEnemyIsStunt;
+    public static Dictionary<int, int> enemiesStunt;
     public static int buffStatPlayer;
     public static int buffStatPlayerTimer;
     public static int buffStatEnemy;
@@ -148,6 +148,7 @@ public class FightManager : MonoBehaviour
     }
 
     public void InitStaticVariable(){
+        enemiesStunt = new Dictionary<int, int>();
         enemiesDisplay = enemiesDisplayEditor; 
         canClickOnButton = true;
         timeStunt = 0;
@@ -160,7 +161,9 @@ public class FightManager : MonoBehaviour
         actions = new List<Actions>();
         whichEnemyToFight = 0;
         whichEnemyAttack = 0;
-        whichEnemyIsStunt = -1;
+        for(int i = 0; i < 3; i+= 1){
+            enemiesStunt.Add(i, 0);
+        }
     }
 
 
@@ -212,18 +215,18 @@ public class FightManager : MonoBehaviour
                 enemiesDead = false;
                 break;
             }
-            else{
+            else
                 enemiesDead = true;
-            }   
         }
 
         if(typeOfEnemy != "Lever")
             for(int i = 0; i < enemiesHP.Count; i+=1){
                 if(enemiesHP[i].value == 0){
-                    enemiesDisplay[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].SetActive(false);
-                    if (enemies[enemiesDisplay.IndexOf(enemiesHP[i].gameObject.transform.parent.gameObject)].GetComponent<Enemies>().typeOfEnemy == actions[1].GetEntitie())
+                    enemiesDisplay[i].SetActive(false);
+                    if (actions.Count > 1 && enemies[i].GetComponent<Enemies>().typeOfEnemy == actions[1].GetEntitie())  
                         actions.Remove(actions[1]);
-                    enemiesHP.Remove(enemiesHP[i]);
+                    if(choiceEnemies != null)
+                        choiceEnemies.GetComponent<Choice>().DisableChoice(i);
                 }
             }
 
@@ -247,30 +250,28 @@ public class FightManager : MonoBehaviour
             whichEnemyAttack = 0;
         if (enemiesDisplay[whichEnemyAttack].GetComponentInChildren<Slider>().value == 0)
             whichEnemyAttack += 1;
+        if (whichEnemyAttack >= enemiesDisplay.Count)
+            whichEnemyAttack = 0;
+
         if (whosIsDead == "")
         {
             actions = new List<Actions>();
             if (typeOfEnemy != "Lever"){
                 bool canAddAction;
-                print("whichEnemyIsStunt " + whichEnemyIsStunt);
-                print("whichEnemyAttack " + whichEnemyAttack);
-                print("timeStunt " + timeStunt);
-                if (whichEnemyIsStunt == whichEnemyAttack && timeStunt > 0){
-                    timeStunt -= 1;
+                if (enemiesStunt[whichEnemyAttack] > 0){
+                    enemiesStunt[whichEnemyAttack] -= 1;
                     canAddAction = false;
-                    print("timeStunt " + timeStunt);
                 }
                 else
                     canAddAction = true;
                     
-                if (whichEnemyIsStunt == whichEnemyAttack && timeStunt == 0){
-                    print("fin de stunt");
+                if (enemiesStunt[whichEnemyAttack] == 0){
                     enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
-                    whichEnemyIsStunt = -1;
+                    enemiesStunt[whichEnemyAttack] = 0;
                     canAddAction = true;
                 }
 
-                print("canAddAction " + canAddAction);
+                
                 if(canAddAction)
                     actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction());
 

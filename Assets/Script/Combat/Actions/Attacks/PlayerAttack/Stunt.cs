@@ -6,9 +6,9 @@ public class Stunt : Actions
 {
     public override void DoAction()
     {
-        FightManager.timeStunt = 2;
-        FightManager.whichEnemyIsStunt = FightManager.whichEnemyToFight;
-        FightManager.actions.RemoveAt(1);
+        FightManager.enemiesStunt[FightManager.whichEnemyToFight] = 3;
+        if (FightManager.actions.Count > 1)
+            FightManager.actions.RemoveAt(1);
         FightManager.enemiesDisplay[FightManager.whichEnemyToFight].transform.GetChild(1).GetComponent<ChangeStatus>().EnableStatus();
         FightManager.enemiesDisplay[FightManager.whichEnemyToFight].transform.GetChild(1).GetComponent<ChangeStatus>().ChangeStatusToStunt();
     }

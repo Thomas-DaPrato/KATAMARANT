@@ -14,6 +14,8 @@ public class RoomManager : MonoBehaviour
 
     public GameObject spawnLever;
 
+    public GameObject spawnPopo;
+
     public List<GameObject> componentsInRoom = new List<GameObject>();
     
 

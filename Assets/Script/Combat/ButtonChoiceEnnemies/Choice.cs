@@ -16,4 +16,14 @@ public class Choice : MonoBehaviour
         if(buttonChoiceEnemy3 != null)
             buttonChoiceEnemy3.GetComponent<Image>().sprite = FightManager.enemies[2].GetComponent<SpriteRenderer>().sprite;
     }
+
+    public void DisableChoice(int i){
+        if (i == 0 && buttonChoiceEnemy1 != null)
+            buttonChoiceEnemy1.SetActive(false);
+        if (i == 1 && buttonChoiceEnemy2 != null)
+            buttonChoiceEnemy2.SetActive(false);
+        if (i == 2 && buttonChoiceEnemy3 != null)
+            buttonChoiceEnemy3.SetActive(false);
+    }
+    
 }

@@ -13,7 +13,8 @@ public class ButtonLeverInFight : MonoBehaviour
         enemyDisplay = FightManager.enemiesDisplay[FightManager.whichEnemyToFight];
     }
     public void LeverInFight(){
-        FightManager.actions.Insert(0,new LeverInFight(sprite, enemyDisplay));
+        if(FightManager.endOfFightTuto && FightManager.canClickOnButton)
+            FightManager.actions.Insert(0,new LeverInFight(sprite, enemyDisplay));
     }
 
     public static void DestroyGameObject(){
