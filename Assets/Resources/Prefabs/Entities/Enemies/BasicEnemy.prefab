@@ -98,14 +98,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23df7dd32baaabd01a646de872fcc05d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 7
+  hp: 10
   typeOfEnemy: Basic
   animatorsController:
   - {fileID: 9100000, guid: 29dfd0459a8ae094e9ff6cf0aa749de5, type: 2}
   - {fileID: 9100000, guid: 304244560562a0d498a3ae7148ff56f9, type: 2}
   - {fileID: 9100000, guid: 2ab251f40da232449ad1d79fba3dc620, type: 2}
   order: 2
-  percentageNormalAttack: 70
+  percentageNormalAttack: 50
 --- !u!95 &2192212718330714238
 Animator:
   serializedVersion: 4

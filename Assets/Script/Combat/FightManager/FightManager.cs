@@ -190,7 +190,8 @@ public class FightManager : MonoBehaviour
             }
                 
             yield return new WaitForSeconds(1);
-                
+            
+
             action.DoAction();
             if (action.GetEntitie() == "Player")
                 playerAnimator.SetBool(action.GetAnimation() + whichEnemyToFight, false);
