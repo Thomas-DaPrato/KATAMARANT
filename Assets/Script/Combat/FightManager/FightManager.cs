@@ -43,11 +43,10 @@ public class FightManager : MonoBehaviour
     //variables
     public static bool endOfFightTuto = false;
     public static bool canClickOnButton ;
-    public static int timeStunt;
     public static Dictionary<int, int> enemiesStunt;
     public static int buffStatPlayer;
     public static int buffStatPlayerTimer;
-    public static int buffStatEnemy;
+    public static Dictionary<int, int> buffStatEnemy;
     public static string typeOfEnemy;
     public static string whosIsDead;
 
@@ -77,7 +76,7 @@ public class FightManager : MonoBehaviour
         InitButton();
         InitAnimator();
         if (typeOfEnemy != "Lever")
-            actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction());
+            actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction(buffStatEnemy[whichEnemyAttack]));
         DonjonManager.rooms[DonjonManager.currentRoom].SetActive(false);
         DonjonManager.player.SetActive(false);
     }
@@ -149,12 +148,11 @@ public class FightManager : MonoBehaviour
 
     public void InitStaticVariable(){
         enemiesStunt = new Dictionary<int, int>();
+        buffStatEnemy = new Dictionary<int, int>();
         enemiesDisplay = enemiesDisplayEditor; 
         canClickOnButton = true;
-        timeStunt = 0;
         buffStatPlayer = 1;
         buffStatPlayerTimer = 0;
-        buffStatEnemy = 1;
         whosIsDead = "";
         enemiesAnimator = new List<Animator>();
         enemiesHP = new List<Slider>();
@@ -163,6 +161,7 @@ public class FightManager : MonoBehaviour
         whichEnemyAttack = 0;
         for(int i = 0; i < 3; i+= 1){
             enemiesStunt.Add(i, 0);
+            buffStatEnemy.Add(i, 1);
         }
     }
 
@@ -259,6 +258,8 @@ public class FightManager : MonoBehaviour
             actions = new List<Actions>();
             if (typeOfEnemy != "Lever"){
                 bool canAddAction;
+
+                
                 if (enemiesStunt[whichEnemyAttack] > 0){
                     enemiesStunt[whichEnemyAttack] -= 1;
                     canAddAction = false;
@@ -266,7 +267,7 @@ public class FightManager : MonoBehaviour
                 else
                     canAddAction = true;
                     
-                if (enemiesStunt[whichEnemyAttack] == 0){
+                if (enemiesStunt[whichEnemyAttack] == 0 && buffStatEnemy[whichEnemyAttack] == 1){
                     enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
                     enemiesStunt[whichEnemyAttack] = 0;
                     canAddAction = true;
@@ -274,7 +275,7 @@ public class FightManager : MonoBehaviour
 
                 
                 if(canAddAction)
-                    actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction());
+                    actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction(buffStatEnemy[whichEnemyAttack]));
 
             }
                 
@@ -291,7 +292,8 @@ public class FightManager : MonoBehaviour
         {
             Destroy(DonjonManager.player);
             Destroy(GameObject.Find("DonjonManager"));
-            SceneManager.LoadScene("GameOver");
+            DisplayEndText.gameOver = true;
+            SceneManager.LoadScene("EndScene");
         }
         else
         {

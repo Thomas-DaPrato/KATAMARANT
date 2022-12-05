@@ -10,13 +10,8 @@ public class PopoInRoom : MonoBehaviour
         {
             print("prise de l'objet");
             Player.inventoryBag.Add("popo");
+            DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(gameObject);
             Destroy(gameObject);
-            foreach (GameObject go in DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom)
-                if (go.name == "PopoInRoom")
-                {
-                    DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
-                    break;
-                }
             print(Player.inventoryBag[0]);
         }
     }

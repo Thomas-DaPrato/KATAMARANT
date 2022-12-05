@@ -8,12 +8,8 @@ public class LeverInRoom : MonoBehaviour
         if(col.name == "Player"){
             print("prise de l'objet");
             Player.inventorySpecialObject.Add("lever");
+            DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(gameObject);
             Destroy(gameObject);
-            foreach(GameObject go in DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom)
-                if(go.name == "LeverInRoom"){
-                    DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
-                    break;
-                }
             print(Player.inventorySpecialObject[0]);
         }
     }

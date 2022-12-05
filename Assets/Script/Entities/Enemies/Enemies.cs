@@ -35,9 +35,11 @@ public class Enemies : MonoBehaviour
         }
     }
 
-    public Actions GetAction(){
+    public Actions GetAction(int buffIsActive){
         int i = Random.Range(0, 100);
-        if (i <= percentageNormalAttack)
+        if (buffIsActive > 1)
+            return enemyActions[0];
+        else if (i <= percentageNormalAttack)
             return enemyActions[0];
         else
             return enemyActions[1];

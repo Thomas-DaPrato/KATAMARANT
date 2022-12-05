@@ -12,7 +12,12 @@ public class ButtonPopoInFight : MonoBehaviour
     }
     public void PopoInFight()
     {
-        FightManager.actions.Insert(0,new PopoInFight(playerDislpay));
-        Destroy(gameObject);
+        if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
+            FightManager.actions.Insert(0,new PopoInFight(playerDislpay));
+            Destroy(gameObject);
+        }
+        
     }
+
+    
 }

@@ -8,7 +8,7 @@ public class HeavyAttackPlayer : Actions
 
     public override void DoAction()
     {
-        FightManager.enemiesHP[FightManager.whichEnemyToFight].value -= (5 * FightManager.buffStatPlayer);
+        FightManager.enemiesHP[FightManager.whichEnemyToFight].value -= (4 * FightManager.buffStatPlayer);
     }
 
     public override string GetEntitie()

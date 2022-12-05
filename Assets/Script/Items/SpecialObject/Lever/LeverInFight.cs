@@ -18,7 +18,7 @@ public class LeverInFight : Actions
     {
         if(FightManager.typeOfEnemy == "Lever"){
             enemyDisplay.GetComponent<Image>().sprite = sprite;
-            ButtonLeverInFight.DestroyGameObject();
+            
         }
         else{
             Debug.Log("cela n'a aucun effet");

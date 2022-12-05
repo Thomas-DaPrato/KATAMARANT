@@ -17,6 +17,7 @@ public class DonjonManager : MonoBehaviour
     public static List<GameObject> bloockedDoors;
 
     public void Start(){
+        DisplayEndText.gameOver = false;
         endOfNarrativeIntro = false;
         NarrativeIntro.indice = 0;
         rooms = new Dictionary<string, GameObject>();

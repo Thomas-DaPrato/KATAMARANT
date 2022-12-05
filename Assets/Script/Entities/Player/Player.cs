@@ -12,8 +12,8 @@ public class Player : MonoBehaviour
 
     public int maxHp;
 
-    public static List<string> inventoryBag = new List<string>(3);
-    public static List<string> inventorySpecialObject = new List<string>(3);
+    public static List<string> inventoryBag;
+    public static List<string> inventorySpecialObject;
     public static bool canMove;
     public static bool isInPause;
 
@@ -29,7 +29,6 @@ public class Player : MonoBehaviour
     public RuntimeAnimatorController animatorInRoom;
 
     public void movePlayer(String direction){
-        StartCoroutine(WalkAnimation());
         switch (direction){
             case "down" :
                 if (coordinates.y - 1 >= 0)
@@ -60,34 +59,31 @@ public class Player : MonoBehaviour
     }
 
     public void initPlayer(RoomManager myCurrentRoom, int x, int y){
+        inventoryBag = new List<string>(3);
+        inventorySpecialObject = new List<string>(3);
         currentRoom = myCurrentRoom;
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
         gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorInRoom;
         pause.SetActive(false);
-        canMove = true;
         isInPause = false;
     }
 
     public void Update(){
         if (!isInPause){
             if(Input.GetKeyDown(KeyCode.Z)){
-                canMove = false;
                 movePlayer("up");
             }
 
             if(Input.GetKeyDown(KeyCode.S)){
-                canMove = false;
                 movePlayer("down");
             }
 
             if(Input.GetKeyDown(KeyCode.D)){
-                canMove = false;
                 movePlayer("right");
             }
 
             if(Input.GetKeyDown(KeyCode.Q)){
-                canMove = false;
                 movePlayer("left");
             }
         }
@@ -101,11 +97,5 @@ public class Player : MonoBehaviour
 
     }
 
-    public IEnumerator WalkAnimation(){
-        gameObject.GetComponent<Animator>().SetBool("walking", true);
-        yield return new WaitForSeconds(0.3f);
-        gameObject.GetComponent<Animator>().SetBool("walking", false);
-        canMove = true;
-    }
 
 }
