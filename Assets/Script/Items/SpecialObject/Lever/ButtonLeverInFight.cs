@@ -15,9 +15,12 @@ public class ButtonLeverInFight : MonoBehaviour
     public void LeverInFight(){
         if(FightManager.endOfFightTuto && FightManager.canClickOnButton){
             FightManager.actions.Insert(0,new LeverInFight(sprite, enemyDisplay));
-            Destroy(gameObject);
         }
             
+    }
+
+    public static void DestroyGameObject(){
+        Destroy(GameObject.Find("LeverInInventory"));
     }
 
 }

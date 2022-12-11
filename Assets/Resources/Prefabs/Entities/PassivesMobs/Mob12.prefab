@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Oh ! J'ai la r\xE9f ! The Binding of Isaac !"
+  - Mais pourquoi tu pleures ?
   - Tu as perdu tes parents ?
 --- !u!61 &4179060965061862963
 BoxCollider2D:

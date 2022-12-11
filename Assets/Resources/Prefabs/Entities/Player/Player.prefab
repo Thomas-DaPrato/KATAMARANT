@@ -760,7 +760,7 @@ GameObject:
   - component: {fileID: 3088748880188050693}
   - component: {fileID: 3088748880188050689}
   - component: {fileID: 3088748880188050688}
-  - component: {fileID: 5819188177508234830}
+  - component: {fileID: 8007298969126286609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -902,7 +902,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!95 &5819188177508234830
+--- !u!95 &8007298969126286609
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -2008,15 +2008,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: da844e8b7bedc2d49804fac8f2ea8a7c, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

@@ -106,6 +106,8 @@ MonoBehaviour:
   - {fileID: 9100000, guid: abf24721bd5d2cb408e400edd021a97c, type: 2}
   order: 1
   percentageNormalAttack: 75
+  sprite: {fileID: 21300000, guid: 1372c566f1ee958aca6e2de2ec06c525, type: 3}
+  canTakeDamage: 1
 --- !u!95 &1549770164186337172
 Animator:
   serializedVersion: 4

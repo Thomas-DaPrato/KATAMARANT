@@ -7,8 +7,11 @@ public class LightAttackPlayer : Actions
 {
     public override void DoAction()
     {
-        foreach (Slider enemyHp in FightManager.enemiesHP)
-            enemyHp.value -= (2 * FightManager.buffStatPlayer);
+        if (FightManager.enemies[FightManager.whichEnemyToFight].GetComponent<Enemies>().canTakeDamage)
+            foreach (Slider enemyHp in FightManager.enemiesHP)
+                enemyHp.value -= (2 * FightManager.buffStatPlayer);
+        else
+            GameObject.Find("ContentFightScene").GetComponent<FightManager>().StartCoroutineLever();
     }
 
 

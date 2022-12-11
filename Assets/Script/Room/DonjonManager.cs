@@ -17,6 +17,9 @@ public class DonjonManager : MonoBehaviour
     public static List<GameObject> bloockedDoors;
 
     public void Start(){
+        StartCoroutine(InitDonjon());
+    }
+    public IEnumerator InitDonjon(){
         DisplayEndText.gameOver = false;
         endOfNarrativeIntro = false;
         NarrativeIntro.indice = 0;
@@ -30,21 +33,23 @@ public class DonjonManager : MonoBehaviour
 
         SpawnPassivesMobs();
         AddSpawnLever();
+        AddSpawnPopo();
+        yield return new WaitForFixedUpdate();
         DisableRooms();
+        yield return new WaitForFixedUpdate();
 
 
         player = Instantiate(Resources.Load("Prefabs/Entities/Player/Player") as GameObject);
         player.name = "Player";
         player.GetComponent<Player>().initPlayer(rooms[currentRoom].GetComponent<RoomManager>(),rooms[currentRoom].GetComponent<RoomManager>().widthRoom/2,0);
         DontDestroyOnLoad(player);
-        GameObject.Find("Player").GetComponent<Player>().map.GetComponent<Map>().ChangeColor(DonjonManager.currentRoom);
+        GameObject.Find("Player").GetComponent<Player>().map.GetComponent<Map>().ChangeColor(currentRoom);
     }
 
     public void AddRoom(string nameRoom){
         rooms.Add(nameRoom, Instantiate(Resources.Load("Prefabs/Donjon/Rooms/" + nameRoom) as GameObject));
         rooms[nameRoom].name = nameRoom;
         rooms[nameRoom].transform.SetParent(gameObject.transform);
-        rooms[nameRoom].GetComponent<RoomManager>().InitRoom();
         foreach (GameObject bloockedDoor in GameObject.FindGameObjectsWithTag("BlockedDoor"))
             bloockedDoors.Add(bloockedDoor);
     }
@@ -59,6 +64,7 @@ public class DonjonManager : MonoBehaviour
         foreach(string key in rooms.Keys){
             if(rooms[key].GetComponent<RoomManager>().spawnLever != null && key != roomLever)
                 Destroy(rooms[key].GetComponent<RoomManager>().spawnLever);
+            
         }
         
 
@@ -73,7 +79,7 @@ public class DonjonManager : MonoBehaviour
                 potentialRoomForPopo.Add(key);
         }
         List<string> roomsPopo = new List<string>();
-        for(int i = 0; i < 3; i += 1){
+        for(int i = 0; i < 2; i += 1){
             string roomPopo = potentialRoomForPopo[Random.Range(0, potentialRoomForPopo.Count)];
             roomsPopo.Add(roomPopo);
             potentialRoomForPopo.Remove(roomPopo);
@@ -81,16 +87,21 @@ public class DonjonManager : MonoBehaviour
         
         foreach (string key in rooms.Keys)
         {
-            if (rooms[key].GetComponent<RoomManager>().spawnLever != null && !roomsPopo.Contains(key))
-                Destroy(rooms[key].GetComponent<RoomManager>().spawnLever);
+            if (rooms[key].GetComponent<RoomManager>().spawnPopo != null && !roomsPopo.Contains(key)){
+                Destroy(rooms[key].GetComponent<RoomManager>().spawnPopo);
+            }
+                
         }
 
 
     }
 
-    public void DisableRooms(){
+    public void DisableRooms(){ 
         foreach(string key in rooms.Keys){
-            rooms[key].SetActive(false);       
+            rooms[key].GetComponent<RoomManager>().InitRoom();
+            if(currentRoom != key)
+                rooms[key].SetActive(false); 
+            
         }
     }
 

@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
+using TMPro;
 
 public class HeavyAttackPlayer : Actions
 {
 
     public override void DoAction()
     {
-        FightManager.enemiesHP[FightManager.whichEnemyToFight].value -= (4 * FightManager.buffStatPlayer);
+        if (FightManager.enemies[FightManager.whichEnemyToFight].GetComponent<Enemies>().canTakeDamage)
+            FightManager.enemiesHP[FightManager.whichEnemyToFight].value -= (4 * FightManager.buffStatPlayer);
+        else
+            GameObject.Find("ContentFightScene").GetComponent<FightManager>().StartCoroutineLever();
     }
 
     public override string GetEntitie()
@@ -20,4 +24,6 @@ public class HeavyAttackPlayer : Actions
     {
         return "HeavyAttack";
     }
+
+    
 }

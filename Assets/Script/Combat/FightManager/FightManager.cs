@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -38,7 +39,9 @@ public class FightManager : MonoBehaviour
     public static GameObject inventoryBag;
     public static GameObject inventorySpecialObject;
 
+    //GameObject
     public GameObject choiceEnemies;
+    public GameObject reaction;
 
     //variables
     public static bool endOfFightTuto = false;
@@ -67,6 +70,7 @@ public class FightManager : MonoBehaviour
 
     public void InitFightManager(){
         DoActionsEvent.AddListener(DoActions);
+        reaction.SetActive(false);
         InitStaticVariable();
         if (howManyEnemy != fight.oneEnemy)
             endOfFightTuto = true;
@@ -90,7 +94,7 @@ public class FightManager : MonoBehaviour
 
     public void InitEnemies(){
         for (int i = 0; i < enemies.Count; i += 1){
-            enemiesDisplay[i].GetComponent<Image>().sprite = enemies[i].GetComponent<SpriteRenderer>().sprite;
+            enemiesDisplay[i].GetComponent<Image>().sprite = enemies[i].GetComponent<Enemies>().sprite;
             enemiesDisplay[i].transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
             enemiesHP.Add(enemiesDisplay[i].GetComponentInChildren<Slider>());
             enemiesHP[i].maxValue = enemies[i].GetComponent<Enemies>().hp;
@@ -318,7 +322,7 @@ public class FightManager : MonoBehaviour
                     DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
                     break;
                 }
-            if (GameObject.FindGameObjectWithTag("HitBox") == null)
+            if (GameObject.FindGameObjectWithTag("HitBox") == null || GameObject.FindGameObjectWithTag("HitBox").GetComponent<Hitbox>().typeOfEnemy == "Lever")
                 DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().enemies = false;
             DonjonManager.player.SetActive(true);
             SceneManager.LoadScene("Room");
@@ -352,6 +356,31 @@ public class FightManager : MonoBehaviour
                 lever.GetComponent<Button>().onClick.AddListener(DoActions);
             }
         }
+    }
+
+    public void StartCoroutineLever(){
+        StartCoroutine(LaunchReactionActionAgainstLever());
+    }
+    public void StartCoroutineItem(){
+        StartCoroutine(LaunchReactionActionItem());
+    }
+
+
+    public IEnumerator LaunchReactionActionAgainstLever(){
+        reaction.SetActive(true);
+        reaction.GetComponent<TextMeshProUGUI>().text = "Je dois faire quelque chose avant";
+        yield return new WaitForSeconds(2);
+        reaction.GetComponent<TextMeshProUGUI>().text = "";
+        reaction.SetActive(false);
+    }
+
+    public IEnumerator LaunchReactionActionItem()
+    {
+        reaction.SetActive(true);
+        reaction.GetComponent<TextMeshProUGUI>().text = "Cela n'a aucun effet";
+        yield return new WaitForSeconds(2);
+        reaction.GetComponent<TextMeshProUGUI>().text = "";
+        reaction.SetActive(false);
     }
 
 

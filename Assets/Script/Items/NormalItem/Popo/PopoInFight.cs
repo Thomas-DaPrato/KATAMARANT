@@ -15,6 +15,7 @@ public class PopoInFight : Actions
     public override void DoAction()
     {
         playerDisplay.GetComponentInChildren<Slider>().value = playerDisplay.GetComponentInChildren<Slider>().value + 8;
+        Player.inventoryBag.RemoveAt(0);
     }
 
 

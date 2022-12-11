@@ -24,14 +24,7 @@ public class RoomManager : MonoBehaviour
         for(int i = 0; i < gameObject.transform.childCount; i +=1 ){
             componentsInRoom.Add(gameObject.transform.GetChild(i).gameObject);
         }
-        if(GameObject.Find("Spawn") != null){
-            print(gameObject.name);
-            for (int i = 0; i < GameObject.Find("Spawn").transform.childCount; i += 1)
-                GameObject.Find("Spawn").transform.GetChild(i).GetComponent<SpawnPassifMob>().Spawn();
-            
-        }
-            
-             
+
     }
 
 

@@ -89,5 +89,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27724e15b3e7db4abb9c1a170764af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buff: {fileID: 21300000, guid: dccf1ae9dd1cd9a32ad7c53490ce116d, type: 3}
+  buff: {fileID: 21300000, guid: aec1d022c34cdd848a2e473ba2d3cdbc, type: 3}
   stunt: {fileID: 21300000, guid: ecbde2412b2858380b9846a2a7a0c2c9, type: 3}

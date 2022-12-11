@@ -16,14 +16,14 @@ public class LeverInFight : Actions
     }
     public override void DoAction()
     {
-        if(FightManager.typeOfEnemy == "Lever"){
+        if (FightManager.typeOfEnemy == "Lever")
+        {
             enemyDisplay.GetComponent<Image>().sprite = sprite;
-            
+            FightManager.enemies[FightManager.whichEnemyToFight].GetComponent<Enemies>().canTakeDamage = true;
+            ButtonLeverInFight.DestroyGameObject();
         }
-        else{
-            Debug.Log("cela n'a aucun effet");
-            
-        }
+        else
+            GameObject.Find("ContentFightScene").GetComponent<FightManager>().StartCoroutineItem();
             
     }
 

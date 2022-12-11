@@ -18,6 +18,10 @@ public class Enemies : MonoBehaviour
 
     public int percentageNormalAttack;
 
+    public Sprite sprite;
+
+    public bool canTakeDamage;
+
     public void Start(){
         switch (typeOfEnemy){
             case "Basic":

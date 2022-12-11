@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
         currentRoom = myCurrentRoom;
         coordinates = new Vector2(x,y);
         gameObject.transform.position = coordinates;
+
         gameObject.GetComponent<Animator>().runtimeAnimatorController = animatorInRoom;
         pause.SetActive(false);
         isInPause = false;
