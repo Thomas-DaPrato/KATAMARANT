@@ -2968,6 +2968,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hitbox1
       objectReference: {fileID: 0}
+    - target: {fileID: 2276249158518757120, guid: 54f1bc3a7c4bec94db4f76a3a2c5b190, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7402050838505437693, guid: 54f1bc3a7c4bec94db4f76a3a2c5b190, type: 3}
       propertyPath: m_RootOrder
       value: 4

@@ -1,0 +1,37 @@
+{
+    "name": "Katamaran",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:bb05cab7d802aa5468f8f2f86840d984"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [
+        "Android",
+        "EmbeddedLinux",
+        "GameCoreScarlett",
+        "GameCoreXboxOne",
+        "iOS",
+        "LinuxStandalone64",
+        "CloudRendering",
+        "Lumin",
+        "macOSStandalone",
+        "PS4",
+        "PS5",
+        "Stadia",
+        "Switch",
+        "tvOS",
+        "WSA",
+        "WebGL",
+        "WindowsStandalone32",
+        "WindowsStandalone64",
+        "XboxOne"
+    ],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

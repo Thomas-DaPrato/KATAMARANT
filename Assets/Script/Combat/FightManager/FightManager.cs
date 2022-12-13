@@ -193,9 +193,8 @@ public class FightManager : MonoBehaviour
             }
                 
             yield return new WaitForSeconds(1);
-            
-
             action.DoAction();
+            
             if (action.GetEntitie() == "Player")
                 playerAnimator.SetBool(action.GetAnimation() + whichEnemyToFight, false);
             else
@@ -206,6 +205,7 @@ public class FightManager : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             if (CheckIfEndOfFight() || actions.Count == 1)
                 break;
+
         }
         EndOfTurn();
 
@@ -215,6 +215,8 @@ public class FightManager : MonoBehaviour
         bool enemiesDead = false;
 
         foreach (Slider slider in enemiesHP){
+            if (slider == null)
+                continue;
             if (slider.value != 0){
                 enemiesDead = false;
                 break;
@@ -225,12 +227,16 @@ public class FightManager : MonoBehaviour
 
         if(typeOfEnemy != "Lever")
             for(int i = 0; i < enemiesHP.Count; i+=1){
+                if (enemiesHP[i] == null)
+                    continue;
                 if(enemiesHP[i].value == 0){
                     enemiesDisplay[i].SetActive(false);
                     if (actions.Count > 1 && enemies[i].GetComponent<Enemies>().typeOfEnemy == actions[1].GetEntitie())  
                         actions.Remove(actions[1]);
                     if(choiceEnemies != null)
                         choiceEnemies.GetComponent<Choice>().DisableChoice(i);
+                    enemiesHP.RemoveAt(i);
+                    enemiesHP.Insert(i, null);
                 }
             }
 
@@ -263,7 +269,6 @@ public class FightManager : MonoBehaviour
             if (typeOfEnemy != "Lever"){
                 bool canAddAction;
 
-                
                 if (enemiesStunt[whichEnemyAttack] > 0){
                     enemiesStunt[whichEnemyAttack] -= 1;
                     canAddAction = false;
@@ -271,13 +276,17 @@ public class FightManager : MonoBehaviour
                 else
                     canAddAction = true;
                     
-                if (enemiesStunt[whichEnemyAttack] == 0 && buffStatEnemy[whichEnemyAttack] == 1){
+                if (enemiesStunt[whichEnemyAttack] == 0 ){
                     enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
                     enemiesStunt[whichEnemyAttack] = 0;
                     canAddAction = true;
                 }
 
-                
+                if(buffStatEnemy[whichEnemyAttack] > 1){
+                    enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().EnableStatus();
+                    enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().ChangeStatusToBuff();
+                }
+
                 if(canAddAction)
                     actions.Add(enemies[whichEnemyAttack].GetComponent<Enemies>().GetAction(buffStatEnemy[whichEnemyAttack]));
 
@@ -285,6 +294,7 @@ public class FightManager : MonoBehaviour
                 
             if (buffStatPlayerTimer > 0)
                 buffStatPlayerTimer -= 1;
+
             if (buffStatPlayerTimer == 0){
                 buffStatPlayer = 1;
                 playerDisplay.transform.GetChild(1).GetComponent<ChangeStatus>().DisableStatus();
@@ -322,7 +332,7 @@ public class FightManager : MonoBehaviour
                     DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
                     break;
                 }
-            if (GameObject.FindGameObjectWithTag("HitBox") == null || GameObject.FindGameObjectWithTag("HitBox").GetComponent<Hitbox>().typeOfEnemy == "Lever")
+            if (GameObject.FindGameObjectWithTag("HitBox") == null)
                 DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().enemies = false;
             DonjonManager.player.SetActive(true);
             SceneManager.LoadScene("Room");

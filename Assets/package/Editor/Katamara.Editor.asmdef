@@ -1,0 +1,20 @@
+{
+    "name": "Katamara.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:05454bacc671c0d4c8016aaacce39c5a",
+        "GUID:6546d7765b4165b40850b3667f981c26",
+        "GUID:656e461844099ae43a609ff6109b0877"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
