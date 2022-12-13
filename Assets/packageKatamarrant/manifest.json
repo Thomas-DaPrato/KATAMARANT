@@ -1,0 +1,14 @@
+{
+  "name": "Katamarrant",
+  "version": "1.0",
+  "displayName": "Katamarrant",
+  "description": "Script for Katamarrant",
+  "unity": "2021.3",
+  "unityRelease": "9f1",
+  "dependencies": {
+    "com.unity.textmeshpro": "3.0.6"
+  },
+  "author": {
+    "name": "Thomas DA-PRATO"
+  }
+}
