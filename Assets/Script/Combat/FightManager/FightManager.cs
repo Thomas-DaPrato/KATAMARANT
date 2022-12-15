@@ -319,19 +319,24 @@ public class FightManager : MonoBehaviour
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().sprite = enemiesDisplay[0].GetComponent<Image>().sprite;
                 Destroy(GameObject.Find("LeverToFight").transform.parent.GetComponent<BoxCollider2D>()  );
                 GameObject.Find("LeverToFight").GetComponent<SpriteRenderer>().flipX = true;
+                GameObject.Find("LeverToFight").transform.parent.tag = "Untagged";
                 foreach (GameObject blockedDoor in DonjonManager.bloockedDoors)
                     blockedDoor.tag = "Untagged";
             }
-            else
+            else{
                 Destroy(GameObject.FindGameObjectWithTag("ToFight"));
+            }
+                
 
 
-            foreach (GameObject go in DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom)
+            foreach (GameObject go in DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom){
                 if (go.tag == "ToFight")
-                {
-                    DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
-                    break;
-                }
+                    {
+                        DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().componentsInRoom.Remove(go);
+                        break;
+                    }
+            }
+                
             if (GameObject.FindGameObjectWithTag("HitBox") == null)
                 DonjonManager.rooms[DonjonManager.currentRoom].GetComponent<RoomManager>().enemies = false;
             DonjonManager.player.SetActive(true);

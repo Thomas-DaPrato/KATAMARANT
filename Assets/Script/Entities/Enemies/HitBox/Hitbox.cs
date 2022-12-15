@@ -12,17 +12,10 @@ public class Hitbox : MonoBehaviour
     {
         if (col.name == "Player")
         {
-            foreach(GameObject enemy in enemies){
-                if (enemy.GetComponent<Enemies>().typeOfEnemy != "Lever")
-                    LauchFight(col.gameObject);
-                else{
-                    if (Player.inventorySpecialObject.Contains("lever"))
-                        LauchFight(col.gameObject);
-                    else
-                        StartCoroutine(DisplayMsgMissingLever());
-                }
-            }
-            
+            if (typeOfEnemy != "Lever" || Player.inventorySpecialObject.Contains("lever"))
+                LauchFight(col.gameObject);
+            else
+                StartCoroutine(DisplayMsgMissingLever());
         }
     }
 
