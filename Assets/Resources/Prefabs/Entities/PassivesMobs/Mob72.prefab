@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "C'est un roc, c'est un pic ! Que dis-je c'est un pic, c'est une p\xE9ninsule
-    !"
+  - "C'est un roc, c'est un pic, c'est un cap ! Que dis-je c'est un cap, c'est une
+    p\xE9ninsule !"
   - "Tu veux un mouchoir \xE0 la menthe ?"
 --- !u!61 &4879505071944087767
 BoxCollider2D:

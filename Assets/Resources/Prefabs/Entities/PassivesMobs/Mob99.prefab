@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Le ressort des ten\xE8bres !"
+  - "Le ressort des t\xE9n\xE8bres !"
   - "Il me fixe d'un regard rouge intense ! \xC7a fait peur !"
 --- !u!61 &2485826623512574543
 BoxCollider2D:

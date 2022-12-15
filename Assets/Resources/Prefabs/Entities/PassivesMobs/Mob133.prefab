@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Il a l'air blaz\xE9 !"
-  - Ces grand yeux cachent quelque chose !
+  - "Il a l'air blas\xE9 !"
+  - Ses grand yeux cachent quelque chose !
 --- !u!61 &5716630984892102667
 BoxCollider2D:
   m_ObjectHideFlags: 0

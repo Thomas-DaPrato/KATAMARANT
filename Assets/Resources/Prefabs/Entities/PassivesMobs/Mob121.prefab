@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Oula, le programmer n'a pas bien fait son travail !
+  - Oula, le programmeur n'a pas bien fait son travail !
   - "Je reconnais \xE7a, bug de texture !"
 --- !u!61 &8966047540195692792
 BoxCollider2D:

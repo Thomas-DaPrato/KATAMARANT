@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - "Un Mouztiquaire dans ces contr\xE9es"
-  - Il a un cheveux sur la langue ou pas ?
+  - Il a un cheveu sur la langue ou pas ?
 --- !u!61 &5236977081291420220
 BoxCollider2D:
   m_ObjectHideFlags: 0

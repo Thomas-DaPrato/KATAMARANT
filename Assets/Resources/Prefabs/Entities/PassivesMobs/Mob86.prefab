@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - C'est l'arbre dans Kirby !!
-  - "Comment un arbre a pu pouuser sur un sol m\xE9talique ?"
+  - "Comment un arbre a pu pousser sur un sol m\xE9tallique ?"
 --- !u!61 &7246675297931500618
 BoxCollider2D:
   m_ObjectHideFlags: 0

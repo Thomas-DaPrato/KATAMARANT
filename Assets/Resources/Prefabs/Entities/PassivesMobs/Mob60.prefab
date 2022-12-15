@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "C'est un pancigny ! Nouvelle esp\xE8ces decouvertes !"
+  - "C'est un pancigny ! Nouvelle esp\xE8ce d\xE9couverte !"
   - Majestueux !
 --- !u!61 &1846672094704054958
 BoxCollider2D:

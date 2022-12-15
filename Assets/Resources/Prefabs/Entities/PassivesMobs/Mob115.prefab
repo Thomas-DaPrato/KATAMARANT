@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Une main qui marche ! Bah j'ai vu pire !
-  - "Qui \xE0 laisser une sc\xE8ne de crime aussi d\xE9guelasse ! "
+  - "Qui a laiss\xE9 une sc\xE8ne de crime aussi d\xE9gueulasse ! "
 --- !u!61 &3197419143651373382
 BoxCollider2D:
   m_ObjectHideFlags: 0

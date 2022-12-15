@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - "Le fameux retour arri\xE8re !"
-  - Ouah ! Il ultilise une technique de rotation !
+  - Ouah ! Il utilise une technique de rotation !
 --- !u!61 &1206692797819402995
 BoxCollider2D:
   m_ObjectHideFlags: 0

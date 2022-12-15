@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Il sait ce qui veut lui ?
+  - Il sait ce qu'il veut lui ?
   - "Un ballon schizophr\xE8ne ?!"
 --- !u!61 &8955418265736207256
 BoxCollider2D:

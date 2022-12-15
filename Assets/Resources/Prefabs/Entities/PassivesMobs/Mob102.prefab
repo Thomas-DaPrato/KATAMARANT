@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - "La petite souris est l\xE0 et pourtant je n'ai pas perdu de dent !"
-  - "Les lutins du P\xE8re No\xEBl son en avance cette ann\xE9e !"
+  - "Les lutins du P\xE8re No\xEBl sont en avance cette ann\xE9e !"
 --- !u!61 &306832115216577408
 BoxCollider2D:
   m_ObjectHideFlags: 0

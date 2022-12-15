@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Une licorne ? Ici ?!
-  - Un chat qui se fait passer par pour une licorne !
+  - Un chat qui se fait passer pour une licorne !
 --- !u!61 &2804378767318260735
 BoxCollider2D:
   m_ObjectHideFlags: 0

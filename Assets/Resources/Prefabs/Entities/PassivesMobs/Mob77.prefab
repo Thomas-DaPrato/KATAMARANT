@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - "Une statue moa\xEF avec des oreilles de lapin. J'hallucine ou pas ?"
-  - "Ca ressemble \xE0 un emoji, non ?"
+  - "\xC7a ressemble \xE0 un emoji, non ?"
 --- !u!61 &8065587183896707059
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Qui es laisse ses d\xE9chets ici !"
+  - "Qui a laiss\xE9 ses d\xE9chets ici !"
   - "Et apr\xE8s on parle de r\xE9chauffement climatique !"
 --- !u!61 &7894664591190540765
 BoxCollider2D:

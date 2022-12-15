@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - "Yes, une nouvelle esp\xE8ce d'alien d\xE9couverte !"
-  - Il a de grosses oreilles, un cousin de Dumbo ?
+  - "Il a de grosses oreilles, un cousin d'un certain \xE9l\xE9phant ?"
 --- !u!61 &8653156417301864393
 BoxCollider2D:
   m_ObjectHideFlags: 0

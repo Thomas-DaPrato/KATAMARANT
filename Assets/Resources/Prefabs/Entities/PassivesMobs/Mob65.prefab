@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "J'ai tout d'abord cru que c'\xE9tait un g\xE2teau mais en fait c'\xE9st un livre
+  - "J'ai tout d'abord cru que c'\xE9tait un g\xE2teau mais en fait c'est un livre
     !"
-  - "Le savoir maudit \xE0 ce qui parait !"
+  - "Le savoir maudit \xE0 ce qu'il para\xEEt !"
 --- !u!61 &7660416055083082113
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Un petit paon! Qu'il est mignon !!
+  - Un petit paon ! Qu'il est mignon !!
   - Il cherche une partenaire, non ?
 --- !u!61 &5747549049277176675
 BoxCollider2D:

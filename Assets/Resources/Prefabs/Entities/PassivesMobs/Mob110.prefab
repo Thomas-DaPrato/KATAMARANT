@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "La reine des fourmies diabolique \xE0 ce que je vois !"
+  - "La reine des fourmis diabolique \xE0 ce que je vois !"
   - C'est le coup de foudre !
 --- !u!61 &7430535333378635823
 BoxCollider2D:

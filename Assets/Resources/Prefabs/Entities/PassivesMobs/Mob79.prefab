@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Un hippocampe super saiyen !!
-  - Mais c'est.. Une maracas avec des cheveux !!
+  - Mais c'est..une maracas avec des cheveux !!
 --- !u!61 &6018017278201543198
 BoxCollider2D:
   m_ObjectHideFlags: 0

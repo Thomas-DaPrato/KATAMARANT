@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "On dirait une limace crois\xE9 avec un poisson des profondeurs."
+  - "On dirait une limace crois\xE9e avec un poisson des profondeurs."
   - Bah ! C'est tout visqueux !
   - C'est une baudroie citron !
 --- !u!61 &3713434103733990552

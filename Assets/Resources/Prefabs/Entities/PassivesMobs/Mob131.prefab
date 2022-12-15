@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Une chauve-souris crois\xE9 avec un lapin !! On aura tout vu !"
+  - "Une chauve-souris crois\xE9e avec un lapin !! On aura tout vu !"
   - "J'esp\xE8re que ce n'est pas une chauve-souris vampire !"
 --- !u!61 &4767571916833510845
 BoxCollider2D:

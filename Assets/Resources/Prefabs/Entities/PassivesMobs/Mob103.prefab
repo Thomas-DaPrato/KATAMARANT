@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "On dirait qu'il a 2 croissant \xE0 la place des bras !"
+  - "On dirait qu'il a 2 croissants \xE0 la place des bras !"
   - "Il a l'air v\xE9n\xE8re lui !"
 --- !u!61 &5881569148905826018
 BoxCollider2D:

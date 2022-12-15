@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Un chat noir! Cela porte malheur !
-  - Il fait l'helicoptere avec sa queue !
+  - Un chat noir ! Cela porte malheur !
+  - "Il fait l'h\xE9licopt\xE8re avec sa queue !"
 --- !u!61 &1290842883949049614
 BoxCollider2D:
   m_ObjectHideFlags: 0

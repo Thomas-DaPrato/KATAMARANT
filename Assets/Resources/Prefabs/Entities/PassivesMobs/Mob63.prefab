@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Un renne \xE0 feuiille. Dr\xF4le d'animal !"
+  - "Un renne \xE0 feuille. Dr\xF4le d'animal !"
   - C'est une plante verte ?!
 --- !u!61 &4995438535773649695
 BoxCollider2D:

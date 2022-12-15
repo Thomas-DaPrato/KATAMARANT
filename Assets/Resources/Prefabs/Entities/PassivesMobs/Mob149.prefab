@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Bienvenue dans la secte !!
-  - "Il y avait un groupe comme \xE7a, tout v\xE9tu de blanc, si je me rappele bien
-    !"
+  - "Il y avait un groupe comme \xE7a, tout v\xEAtus de blanc, si je me rappelle
+    bien !"
 --- !u!61 &5445456116125793059
 BoxCollider2D:
   m_ObjectHideFlags: 0

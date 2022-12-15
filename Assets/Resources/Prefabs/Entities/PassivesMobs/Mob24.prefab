@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Un flapillion !
-  - "un h\xE9licopt\xE8re animal !!"
+  - "Un h\xE9licopt\xE8re animal !!"
 --- !u!61 &652733582965001353
 BoxCollider2D:
   m_ObjectHideFlags: 0

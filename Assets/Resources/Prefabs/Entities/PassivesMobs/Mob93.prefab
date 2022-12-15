@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Lui, il a du passer un sale quart d'heure !
+  - "Lui, il a d\xFB passer un sale quart d'heure !"
   - Il ne lui manque pas des formes 3D par hasard ?
 --- !u!61 &2509925654984793132
 BoxCollider2D:

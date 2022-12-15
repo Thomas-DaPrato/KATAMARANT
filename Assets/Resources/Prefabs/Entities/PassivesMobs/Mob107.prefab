@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Une jolie salamandre !
-  - "Il a l'air enpoison\xE9 !"
+  - "Elle a l'air enpoisonn\xE9e !"
 --- !u!61 &520964351917333254
 BoxCollider2D:
   m_ObjectHideFlags: 0

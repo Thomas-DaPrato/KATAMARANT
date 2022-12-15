@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - 'SailorMoon ? '
+  - 'Une vraie magical girl ? '
   - Cette T pose ! Oh mon dieu, quelle prestance !
 --- !u!61 &4452698799534026045
 BoxCollider2D:

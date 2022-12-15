@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Mais qu'est ce que c'est ?
+  - Mais qu'est-ce que c'est ?
   - "\xC7a se mange ?"
 --- !u!61 &769764610566726898
 BoxCollider2D:

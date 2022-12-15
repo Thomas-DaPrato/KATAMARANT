@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Et moi qui voulez une popo de soin !
+  - Et moi qui voulais une popo de soin !
   - Une solution douteuse !
 --- !u!61 &1894530105809937552
 BoxCollider2D:

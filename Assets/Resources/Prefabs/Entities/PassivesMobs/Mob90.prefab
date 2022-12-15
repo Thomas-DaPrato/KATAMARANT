@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Du riz gluant ! J'avais faim !
-  - Battaille de riz ! GO !
+  - Bataille de riz ! GO !
 --- !u!61 &2621228051428485894
 BoxCollider2D:
   m_ObjectHideFlags: 0

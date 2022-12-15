@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reactions:
   - Un catcheur, enfin j'en rencontre un !
-  - "Il a pris la grosse t\xEAte !"
+  - "Il a prit la grosse t\xEAte !"
 --- !u!61 &6630131771723175381
 BoxCollider2D:
   m_ObjectHideFlags: 0

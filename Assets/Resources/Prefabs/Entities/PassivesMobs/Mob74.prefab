@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "AH ! Un poro d\xE9moniaque !"
-  - "Un chochon d'inde d\xE9monique !"
+  - "Ah ! Un poro d\xE9moniaque !"
+  - "Un cochon d'inde d\xE9monique !"
 --- !u!61 &4165676232833208839
 BoxCollider2D:
   m_ObjectHideFlags: 0

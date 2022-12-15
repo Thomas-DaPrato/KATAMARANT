@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Un raton laveur avec des bouchons d'oreille !
-  - Il a de grand yeux !
+  - Un raton laveur avec des bouchons d'oreilles !
+  - Il a de grands yeux !
 --- !u!61 &2812736596935147515
 BoxCollider2D:
   m_ObjectHideFlags: 0

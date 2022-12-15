@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Cet alien a les oreilles de Shrek !
-  - Le Grinch !
+  - Cet alien a les oreilles d'un ogre bien connu !
+  - "Je n'irais pas dans ton marais, cr\xE9ature !"
 --- !u!61 &1798283302175867743
 BoxCollider2D:
   m_ObjectHideFlags: 0

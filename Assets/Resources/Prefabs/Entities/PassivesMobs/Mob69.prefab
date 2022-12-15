@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Lui, je n'aimeraias pas le crois\xE9 \xE0 la sortie des \xE9coles !"
+  - "Lui, je n'aimerais pas le croiser \xE0 la sortie des \xE9coles !"
   - "Il me mate l\xE0 ?"
   - Tu veux des bonbons !
 --- !u!61 &6871225144560754046

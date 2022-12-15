@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Bonjour Squirel-Man !
+  - Bonjour Squirrel-Man !
   - "Trop styl\xE9 la cape !!"
 --- !u!61 &2469742867368712874
 BoxCollider2D:

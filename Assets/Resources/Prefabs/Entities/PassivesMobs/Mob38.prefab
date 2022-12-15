@@ -48,9 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Ah ! Amazon c'est tromp\xE9 de destinataire !"
-  - "Mais j'ai command\xE9 quelques chose ?"
-  - '!'
+  - "Ah ! Amazon s'est tromp\xE9 de destinataire !"
+  - "Mais j'ai command\xE9 quelque chose ?"
 --- !u!61 &2151078111636565416
 BoxCollider2D:
   m_ObjectHideFlags: 0

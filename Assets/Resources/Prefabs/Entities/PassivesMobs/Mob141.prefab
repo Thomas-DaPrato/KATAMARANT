@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - "Une boule de crystal ! Je vais pouvoir conna\xEEtre mon avenir !"
+  - "Une boule de cristal ! Je vais pouvoir conna\xEEtre mon avenir !"
   - "Mais o\xF9 est la voyante ?"
 --- !u!61 &4129149361300890013
 BoxCollider2D:

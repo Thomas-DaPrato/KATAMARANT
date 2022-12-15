@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Depuis quand worms est dans notre jeu ?
-  - Un esgargot avec une grenade en guise de coquille ? Ok !
+  - Depuis quand on a des lombrics dans notre jeu ?
+  - Un escargot avec une grenade en guise de coquille ? Ok !
 --- !u!61 &155513707437054588
 BoxCollider2D:
   m_ObjectHideFlags: 0

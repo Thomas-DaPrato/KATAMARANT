@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Un bonne binouse !
+  - Une bonne binouse !
   - "Attention \xE0 la mousse !"
 --- !u!61 &808829758999105980
 BoxCollider2D:

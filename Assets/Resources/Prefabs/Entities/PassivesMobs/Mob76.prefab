@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Un frileux  En cet endroit. Pas logique !
+  - Un frileux ? En cet endroit ? Pas logique !
   - "Une \xE9charpe vivante ?!"
 --- !u!61 &3290778588258756662
 BoxCollider2D:

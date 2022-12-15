@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reactions:
-  - Qu'est ce que c'est que ce truc ?
+  - Qu'est-ce que c'est que ce truc ?
   - On dirait un pivert ?
 --- !u!61 &43172140342443582
 BoxCollider2D:
