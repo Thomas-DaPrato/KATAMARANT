@@ -282,7 +282,7 @@ public class FightManager : MonoBehaviour
                     canAddAction = true;
                 }
 
-                if(buffStatEnemy[whichEnemyAttack] > 1){
+                if(enemiesStunt[whichEnemyAttack] == 0 && buffStatEnemy[whichEnemyAttack] > 1){
                     enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().EnableStatus();
                     enemiesDisplay[whichEnemyAttack].transform.GetChild(1).GetComponent<ChangeStatus>().ChangeStatusToBuff();
                 }
